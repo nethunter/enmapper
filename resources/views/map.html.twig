@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'map' %}
+
+{% block head %}
+    {{ map.headerjs|raw }}
+{% endblock %}
+
+{% block content %}
+    {{ map.js|raw }}
+    {{ map.body|raw }}
+{% endblock %}
