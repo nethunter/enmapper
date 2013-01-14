@@ -38,3 +38,5 @@ $app['db.options'] = array(
     'user'     => 'root',
     'password' => '160557',
 );
+
+$app['en_domain'] = 'rusisrael.en.cx';

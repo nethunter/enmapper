@@ -1,9 +1,4 @@
 <?php
-
-/**
- * @author Саша Стаменковић <umpirsky@gmail.com>
- */
-
 $schema = new \Doctrine\DBAL\Schema\Schema();
 
 $post = $schema->createTable('post');

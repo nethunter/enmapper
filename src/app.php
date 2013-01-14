@@ -13,8 +13,6 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 use SilexAssetic\AsseticExtension;
 
-$app->register(new HttpCacheServiceProvider());
-
 $app->register(new SessionServiceProvider());
 $app->register(new ValidatorServiceProvider());
 $app->register(new FormServiceProvider());

@@ -23,7 +23,8 @@
         "doctrine/dbal"         : "2.3.*",
         "twitter/bootstrap"     : "v2.2.2",
         "mheap/silex-assetic"   : "dev-master",
-        "php-google-maps/php-google-maps": "*"
+        "php-google-maps/php-google-maps": "*",
+        "fabpot/goutte": "1.0.*"
     },
     "require-dev": {
         "symfony/dom-crawler"   : "2.1.*",
@@ -37,7 +38,7 @@
     "autoload": {
         "psr-0": {
             "SKE": "src/",
-            "App": "src/"
+            "En": "src/"
         }
     }
 }
