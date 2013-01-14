@@ -151,8 +151,13 @@ EOT
 $console
         ->register('en:update:games')
         ->setDescription('Index the list of past games')
+        ->addOption(
+                'dev', null, InputOption::VALUE_OPTIONAL, 
+                'Use local stub, instead of production code', false)
         ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-            $pastGames = new En\Games\Past($app['en_domain'], 1, $app['debug']);
+            $dev = $input->getOption('dev');
+            
+            $pastGames = new En\Games\Crawler\Past($app['en_domain'], 1, $dev);
             $pastGameList = $pastGames->getList();
             
             $output->writeln(print_r($pastGameList, true));

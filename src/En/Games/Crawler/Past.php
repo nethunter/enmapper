@@ -1,35 +1,28 @@
 <?php
-namespace En\Games;
+namespace En\Games\Crawler;
 
-use Goutte\Client;
+use En\CrawlerClient;
 
 class Past {
     protected $_domain = null;
     protected $_url = '/Games.aspx';
     protected $_pages = null;
     protected $_games = null;
-    protected $_debug = false;
+    protected $_dev = false;
 
-    public function __construct($domain, $pages = 1, $debug) {
+    public function __construct($domain, $pages = 1, $dev) {
         $this->_domain = $domain;
         $this->_pages = $pages;
-        $this->_debug = $debug;
+        $this->_dev = $dev;
     }
     
     public function getList()
     {
-        $client = new Client();
-        $client->getClient()->setConfig(array(
-            'curl.options' => array(
-                CURLOPT_CONNECTTIMEOUT => 60,
-                CURLOPT_TIMEOUT => 60,
-            ),
-        ));
-        
-        $request_url = ($this->_debug
+        $request_url = ($this->_dev
                 ? 'http://localhost:8181/stubs/Games.html'
                 : 'http://' . $this->_domain . $this->_url);
-        
+
+        $client = new CrawlerClient();
         $crawler = $client->request('GET', $request_url);
         
         $gamesTable = $crawler->filterXPath('//td[@id=\'tdContentCenter\']/table/tr/td/table/tr/td/table/tr[1]/td/table/tr');
