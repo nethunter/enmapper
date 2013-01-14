@@ -31,7 +31,7 @@ class ApplicationTest extends WebTestCase
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
     }
 
-    public function testLogin()
+    /* public function testLogin()
     {
         $client = $this->createClient();
         $crawler = $client->request('GET', '/login');
@@ -65,5 +65,5 @@ class ApplicationTest extends WebTestCase
         $this->assertEquals(0, $crawler->filter('.error')->count());
         $crawler = $client->followRedirect();
         $this->assertEquals(2, $crawler->filter('a[href="/logout"]')->count());
-    }
+    } */
 }

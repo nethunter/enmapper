@@ -1,7 +1,6 @@
 <?php
 
 use Silex\Provider\FormServiceProvider;
-use Silex\Provider\HttpCacheServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TranslationServiceProvider;

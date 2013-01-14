@@ -157,7 +157,7 @@ $console
         ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
             $dev = $input->getOption('dev');
             
-            $pastGames = new En\Games\Crawler\Past($app['en_domain'], 1, $dev);
+            $pastGames = new En\Games\Crawler\PastGames($app['en_domain'], 1, $dev);
             $pastGameList = $pastGames->getList();
             
             $output->writeln(print_r($pastGameList, true));
