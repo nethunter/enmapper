@@ -7,11 +7,21 @@ use Composer\Script\Event;
 class Script
 {
 
+    public static function createOrChmodPath($path)
+    {
+	if (file_exists($path)) {
+		chmod($path, 0777);
+	} else {
+		mkdir($path, 0777);
+	}
+    }
+
     public static function postInstall(Event $event)
     {
-        chmod('resources/cache', 0777);
-        chmod('resources/log', 0777);
-        chmod('web/assets', 0777);
+	self::createOrChmodPath('resources/cache');
+	self::createOrChmodPath('resources/log');
+	self::createOrChmodPath('web/assets');
+
         chmod('console', 0500);
         exec('php console assetic:dump');
     }
