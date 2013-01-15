@@ -21,6 +21,7 @@ class PastGames extends CrawlerAbstract {
                 . 'tr/td/table/tr/td/table/tr[1]/td/table/tr');
         $gamesCount = $gamesTable->count();
         
+        $gamesTableDetails = array();        
         for($i = 0; $i < $gamesCount; $i++) {
             $game = $gamesTable->eq($i);
             $number = $game->filter('td span span')->text();
