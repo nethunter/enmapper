@@ -8,6 +8,7 @@ class PastGamesTest extends \PHPUnit_Framework_TestCase
     public function testCrawl() 
     {
         $pastGamesHtml = file_get_contents(__DIR__ . '/../../../../stubs/pastgames.html');
+        
         $crawler = new Crawler();
         $crawler->addContent($pastGamesHtml, 'text/html');
         
@@ -18,5 +19,6 @@ class PastGamesTest extends \PHPUnit_Framework_TestCase
                 ->will($this->returnValue($crawler));
 
         $gameList = $pastGamesCrawl->getList();
+        print_r($gameList);
     }
 }
