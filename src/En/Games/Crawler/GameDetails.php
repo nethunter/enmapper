@@ -3,16 +3,19 @@ namespace En\Games\Crawler;
 
 use En\CrawlerClient;
 
-class PastGames extends CrawlerAbstract {
-    protected $_url = '/Games.aspx';
-    protected $_page = null;
+class GameDetails extends CrawlerAbstract {
+    protected $_url = '/GameDetails.aspx';
+    protected $_game_id = null;
+    protected $_pages = null;
     protected $_games = null;
-
-    public function __construct($domain, $page = 1) {
-        $this->_domain = $domain;
-        $this->_page = $page;
-    }
+    
+    public function __construct($domain, $gameId)
+    {
+        parent::__construct($domain);
         
+        $this->_url .= '?gid=' . $gameId;
+    }
+    
     public function getData()
     {
         $crawler = $this->getCrawler();
