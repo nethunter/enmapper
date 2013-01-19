@@ -3,16 +3,15 @@ namespace En\Games\Crawler;
 
 use En\CrawlerClient;
 
-class PastGames extends CrawlerAbstract
+class GameScenario extends CrawlerAbstract
 {
     protected $url = '/Games.aspx';
-    protected $page = null;
-    protected $games = null;
+    protected $gameId = null;
 
-    public function __construct($domain, $page = 1)
+    public function __construct($domain, $gameId)
     {
         $this->domain = $domain;
-        $this->page = $page;
+        $this->gameId = $gameId;
     }
         
     public function getData()

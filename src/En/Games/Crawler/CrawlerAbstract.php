@@ -3,22 +3,25 @@ namespace En\Games\Crawler;
 
 use En\CrawlerClient;
 
-abstract class CrawlerAbstract {
-    protected $_domain = null;
+abstract class CrawlerAbstract
+{
+    protected $domain = null;
+    protected $url = null;
 
-    public function __construct($domain) {
-        $this->_domain = $domain;
+    public function __construct($domain)
+    {
+        $this->domain = $domain;
     }
     
     public function getCrawler()
     {
-        $request_url = 'http://' . $this->_domain . $this->_url;
+        $requestUrl = 'http://' . $this->domain . $this->url;
 
         $client = new CrawlerClient();
-        $crawler = $client->request('GET', $request_url);
+        $crawler = $client->request('GET', $requestUrl);
         
         return $crawler;
     }
     
-    abstract function getData();
+    abstract public function getData();
 }

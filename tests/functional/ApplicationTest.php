@@ -1,5 +1,7 @@
 <?php
 
+namespace En;
+
 use Silex\WebTestCase;
 use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
 
@@ -13,9 +15,11 @@ class ApplicationTest extends WebTestCase
         require __DIR__.'/../../src/app.php';
 
         // Use FilesystemSessionStorage to store session
-        $app['session.storage'] = $app->share(function() {
-            return new MockFileSessionStorage(sys_get_temp_dir());
-        });
+        $app['session.storage'] = $app->share(
+            function () {
+                return new MockFileSessionStorage(sys_get_temp_dir());
+            }
+        );
 
         // Controllers
         require __DIR__ . '/../../src/controllers.php';

@@ -24,12 +24,14 @@
         "twitter/bootstrap"     : "v2.2.2",
         "mheap/silex-assetic"   : "dev-master",
         "php-google-maps/php-google-maps": "*",
-        "fabpot/goutte": "1.0.*"
-    },
-    "require-dev": {
+        "fabpot/goutte": "1.0.*",
+        "mobiledetect/mobiledetectlib": "2.5.*",
         "symfony/dom-crawler"   : "2.1.*",
         "symfony/css-selector"  : "2.1.*",
         "symfony/browser-kit"   : "2.1.*"
+    },
+    "require-dev": {
+        "phing/phing"           : "2.4.*"
     },
     "minimum-stability" : "dev",
     "scripts": {
