@@ -3,4 +3,4 @@ resources/log/*
 vendor/
 web/assets/*
 .*~
-/nbproject/private/
+/nbproject/private/bin/
