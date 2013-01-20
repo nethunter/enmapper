@@ -13,36 +13,44 @@ class GameScenario extends CrawlerAbstract
         $this->domain = $domain;
         $this->gameId = $gameId;
     }
+    
+    public function getLevels($crawler)
+    {
+        $levelTable = $crawler->filterXPath(
+            'html/body/table/tr/td[@class=\'white\']/div'
+        );
         
+        return $levelTable;
+    }
+    
     public function getData()
     {
         $crawler = $this->getCrawler();
+        $levelTable = $this->getLevels($crawler);
+        $levelCount = $levelTable->count();
         
-        $gamesTable = $crawler->filterXPath(
-            '//td[@id=\'tdContentCenter\']/table/'
-            . 'tr/td/table/tr/td/table/tr[1]/td/table/tr'
-        );
-        $gamesCount = $gamesTable->count();
-        
-        $gamesTableDetails = array();
-        for ($i = 0; $i < $gamesCount; $i++) {
-            $game = $gamesTable->eq($i);
-            $number = $game->filter('td span span')->text();
-         
-            $gameDetails = $game->filterXPath('//td[4]/a');
+        $gameScenario = array();
+        for ($i = 0; $i < $levelCount; $i++) {
+            $level = $levelTable->eq($i);
+            $levelHeader = $level->filter('.Text8');
+            $levelContent = $level->filter('.scenarioBlock');
             
-            $gameData = array(
-                'type' => $game->filterXPath('//tr/td[2]/span')->text(),
-                'number' => $game->filter('td span span')->text(),
-                'title' => $gameDetails->text(),
-                'link' => $gameDetails->attr('href')
+            $levelText = trim($levelContent->text());
+            $levelText = preg_replace(
+                '/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/',
+                '',
+                $levelText
             );
             
-            if ('Quest' == $gameData['type']) {
-                $gamesTableDetails[] = $gameData;
-            }
+            $levelData = array(
+                'name' => trim($levelHeader->text()),
+                'num' => $levelHeader->filter('a')->attr('name'),
+                'content' => $levelText
+            );
+            
+            $gameScenario[] = $levelData;
         }
         
-        return $gamesTableDetails;
+        return $gameScenario;
     }
 }

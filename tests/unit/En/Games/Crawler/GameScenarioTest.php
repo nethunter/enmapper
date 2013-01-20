@@ -7,13 +7,13 @@ class GameScenarioTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetScenarioDetailsForGame()
     {
-        $gameScenarioHtml = file_get_contents(__DIR__ . '/../../../../stubs/gamedetails.html');
+        $gameScenarioHtml = file_get_contents(__DIR__ . '/../../../../stubs/gamescenario.html');
         
         $crawler = new Crawler();
         $crawler->addContent($gameScenarioHtml, 'text/html;charset=utf-8');
         
         $gameScenarioCrawl = $this->getMock(
-            'En\Games\Crawler\GameDetails',
+            'En\Games\Crawler\GameScenario',
             array('getCrawler'),
             array('rusisrael.en.cx', 39352)
         );
@@ -24,13 +24,19 @@ class GameScenarioTest extends \PHPUnit_Framework_TestCase
 
         $gameScenario = $gameScenarioCrawl->getData();
         
-        
-        $this->assertNotEmpty($authorSummary);
+        $this->assertNotEmpty($gameScenario);
+        $this->assertCount(24, $gameScenario);
         $this->assertContains(
-            'Игра посвящена музыкальным инструментам. '
-            . 'Ну, или тому, что авторы считают музыкальными '
-            . 'инструментами.',
-            $authorSummary
+            array(
+                'name' => 'Level #24 "Последняя заглушка"',
+                'num' => 24,
+                'content' => "Autopass: in 5 minutes\t\t\t\t\t\tTask for "
+                    . "allНу что ж, молодцы!\rБанально надеемся, что вам "
+                    . "тупо понравилось! :)\rЖдем вас в баре Пророк-Сайгон, "
+                    . "ул. Левонтин 11, Тель Авив."
+            ),
+            $gameScenario
         );
+                
     }
 }

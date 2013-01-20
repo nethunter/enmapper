@@ -32,6 +32,19 @@ $app->register(new MonologServiceProvider(), array(
     'monolog.level'   => 300 // = Logger::WARNING
 ));
 
+$app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
+    'db.orm.proxies_dir'           => __DIR__ . '/cache/doctrine/proxy',
+    'db.orm.proxies_namespace'     => 'DoctrineProxy',
+    'db.orm.cache'                 => 
+        !$app['debug'] && extension_loaded('apc') ? new ApcCache() : new ArrayCache(),
+    'db.orm.auto_generate_proxies' => true,
+    'db.orm.entities'              => array(array(
+        'type'      => 'annotation',       // entity definition 
+        'path'      => __DIR__ . '/src/En/Entities',   // path to your entity classes
+        'namespace' => 'En\Entities', // your classes namespace
+    )),
+));
+
 $app->register(new TwigServiceProvider(), array(
     'twig.options'        => array(
         'cache'            => isset($app['twig.options.cache']) ? $app['twig.options.cache'] : false,
