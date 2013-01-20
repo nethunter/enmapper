@@ -46,7 +46,7 @@ class GameDomain
         return $this->games;
     }
 
-    public function addGames($game)
+    public function addGame($game)
     {
         $this->games[] = $game;
         return $this;
