@@ -13,6 +13,9 @@ $app->match('/', function() use ($app) {
 $app->match('/map', function() use ($app) {
     $map = new \PHPGoogleMaps\Map;
 
+    $em = $app['db.orm.em'];
+
+    
     $positions = array(
         array(
             'position' => array(31.921452, 34.882401),

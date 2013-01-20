@@ -27,8 +27,8 @@ $app['db.options'] = array(
     'driver'   => 'pdo_mysql',
     'host'     => 'localhost',
     'dbname'   => 'enmapper',
-    'user'     => 'root',
-    'password' => '160557',
+    'user'     => 'enmapper',
+    'password' => '3nm4pp3r',
 );
 
 

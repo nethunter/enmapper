@@ -90,15 +90,15 @@ if (isset($app['assetic.enabled']) && $app['assetic.enabled']) {
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 
 $app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
-    'db.orm.proxies_dir'           => __DIR__ . '/cache/doctrine/proxy',
-    'db.orm.proxies_namespace'     => 'DoctrineProxy',
-    'db.orm.cache'                 => 
+    'db.orm.proxies_dir' => __DIR__ . '/cache/doctrine/proxy',
+    'db.orm.proxies_namespace' => 'DoctrineProxy',
+    'db.orm.cache' => 
         !$app['debug'] && extension_loaded('apc') ? new ApcCache() : new ArrayCache(),
     'db.orm.auto_generate_proxies' => true,
     'db.orm.entities'              => array(array(
-        'type'      => 'annotation',       // entity definition 
-        'path'      => __DIR__ . '/En/Entity',   // path to your entity classes
-        'namespace' => 'En\Entity', // your classes namespace
+        'type' => 'annotation',
+        'path' => __DIR__ . '/En/Entity',
+        'namespace' => 'En\Entity',
     )),
 ));
 

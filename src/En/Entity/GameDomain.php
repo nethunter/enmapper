@@ -18,4 +18,39 @@ class GameDomain
      * @OneToMany(targetEntity="En\Entity\Game", mappedBy="addGame")
      */
     protected $games;
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getGames()
+    {
+        return $this->games;
+    }
+
+    public function addGames($game)
+    {
+        $this->games[] = $game;
+        return $this;
+    }
+
+    
 }
