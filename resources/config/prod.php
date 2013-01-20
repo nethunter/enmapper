@@ -1,12 +1,4 @@
 <?php
-
-// Local
-$app['locale'] = 'fr';
-$app['session.default_locale'] = $app['locale'];
-$app['translator.messages'] = array(
-    'fr' => __DIR__.'/../resources/locales/fr.yml',
-);
-
 // Cache
 $app['cache.path'] = __DIR__ . '/../cache';
 
@@ -38,19 +30,6 @@ $app['db.options'] = array(
     'user'     => 'root',
     'password' => '160557',
 );
-
-$app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
-    'db.orm.proxies_dir'           => __DIR__ . '/cache/doctrine/proxy',
-    'db.orm.proxies_namespace'     => 'DoctrineProxy',
-    'db.orm.cache'                 => 
-        !$app['debug'] && extension_loaded('apc') ? new ApcCache() : new ArrayCache(),
-    'db.orm.auto_generate_proxies' => true,
-    'db.orm.entities'              => array(array(
-        'type'      => 'annotation',       // entity definition 
-        'path'      => __DIR__ . '/src',   // path to your entity classes
-        'namespace' => 'MyWebsite\Entity', // your classes namespace
-    )),
-));
 
 
 $app['en_domain'] = 'rusisrael.en.cx';
