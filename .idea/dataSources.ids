@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="EnMapper" product="MySQL" version="5.5.28-0ubuntu0.12.10.2" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="f0b79e36-cff6-401e-83b1-b26a53c06faa">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost:3307/enmapper</jdbc-url>
+    <user-name>enmapper</user-name>
+    <user-password>df99dfc4dfc7df9edfdadfdadf99dfd8</user-password>
+    <schema-pattern>enmapper.*</schema-pattern>
+    <default-schemas>enmapper.*</default-schemas>
+    <default-dialect>MySQL</default-dialect>
+    <libraries>
+      <library>
+        <url>jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.22-bin.jar!/</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/Downloads/mysql-connector-license.txt</url>
+      </library>
+    </libraries>
+    <table name="game" schema="" catalog="enmapper" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="domain_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="extId" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="num" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="type" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12" />
+      <column name="link" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="isIndexed" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7" />
+      <primary-key name="PRIMARY" columns="id" />
+      <foreign-key name="FK_232B318C115F0EE5" columns="domain_id" ref-table="game_domain" ref-schema="" ref-catalog="enmapper" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2" />
+      <exported-key name="FK_A8D9B59CE48FD905" columns="" />
+      <index name="IDX_232B318C115F0EE5" unique="false" columns="domain_id" />
+    </table>
+    <table name="game_domain" schema="" catalog="enmapper" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12" />
+      <primary-key name="PRIMARY" columns="id" />
+      <exported-key name="FK_232B318C115F0EE5" columns="" />
+    </table>
+    <table name="game_level" schema="" catalog="enmapper" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="game_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="num" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="link" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="content" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="false" jdbcType="-1" />
+      <primary-key name="PRIMARY" columns="id" />
+      <foreign-key name="FK_A8D9B59CE48FD905" columns="game_id" ref-table="game" ref-schema="" ref-catalog="enmapper" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2" />
+      <exported-key name="FK_5E9E89CB5FB14BA7" columns="" />
+      <index name="IDX_A8D9B59CE48FD905" unique="false" columns="game_id" />
+    </table>
+    <table name="location" schema="" catalog="enmapper" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="lng" sqlType="DECIMAL" length="10" precision="6" nullable="false" jdbcType="3" />
+      <column name="lat" sqlType="DECIMAL" length="10" precision="6" nullable="false" jdbcType="3" />
+      <column name="level_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+      <foreign-key name="FK_5E9E89CB5FB14BA7" columns="level_id" ref-table="game_level" ref-schema="" ref-catalog="enmapper" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2" />
+      <index name="IDX_5E9E89CB5FB14BA7" unique="false" columns="level_id" />
+    </table>
+  </data-source>
+</component>

@@ -15,7 +15,7 @@ class GameDomain
      */
     protected $name;
     /**
-     * @OneToMany(targetEntity="En\Entity\Game", mappedBy="addGame")
+     * @OneToMany(targetEntity="Game", mappedBy="addGame")
      */
     protected $games;
     

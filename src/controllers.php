@@ -83,42 +83,34 @@ $app->match('/map', function() use ($app) {
 //            'level' => 'Level #22 "Побег"'
 //        ),
 //    );
-    
-    $domains = $em->getRepository("En\Entity\GameDomain")->findBy(
-        array(
-            'name' => $app['en_domain']
-        )
-    );
-    
 
-    foreach($domains as $domain) {
-        $games = $domain->getGames();
-        foreach($games as $game) {
-            $gameLevels = $game->getLevels();
+    $dql = 'SELECT l, gl, g, gd FROM En\Entity\Location l JOIN l.level gl JOIN gl.game g JOIN g.domain gd';
 
-            foreach($gameLevels as $gameLevel) {
-                $locations = $gameLevel->getLocations();
+    $query = $app['db.orm.em']->createQuery($dql);
+    $locations = $query->getResult();
 
-                $marker_options = array(
-                    'title' => $game->getNum() . ' - ' . $gameLevel->getName(),
-                    'content' => '<p><strong>' . $game->getName() . '</strong><br />' 
-                        . $gameLevel->getNum() . '</p>'
-                );
+    /**
+     * @var En\Entity\Location $location
+     */
+    foreach($locations as $location) {
+        $gameLevel = $location->getLevel();
+        $game = $gameLevel->getGame();
+        $domain = $game->getDomain();
 
-                foreach($locations as $location) {
+        $marker_options = array(
+            'title' => $game->getNum() . ' - ' . $gameLevel->getName(),
+            'content' => '<p><strong>' . $game->getName() . '</strong><br />'
+                . $gameLevel->getNum() . '</p>'
+        );
 
-                    $lattitude = $location->getLat();
-                    $longtitude = $location->getLng();
+        $lattitude = $location->getLat();
+        $longtitude = $location->getLng();
 
-                    $marker = \PHPGoogleMaps\Overlay\Marker::createFromPosition( 
-                        new \PHPGoogleMaps\Core\LatLng($lattitude, $longtitude),
-                            $marker_options 
-                    );
-                    $map->addObject( $marker );
-
-                }
-            }
-        }
+        $marker = \PHPGoogleMaps\Overlay\Marker::createFromPosition(
+            new \PHPGoogleMaps\Core\LatLng($lattitude, $longtitude),
+            $marker_options
+        );
+        $map->addObject( $marker );
     }
     
     $map->setWidth('940px');

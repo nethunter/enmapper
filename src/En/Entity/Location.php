@@ -10,9 +10,9 @@ class Location {
      */    
     protected $id;
     /**
-     * @ManyToOne(targetEntity="En\Entity\GameLevel", inversedBy="setLevel")
+     * @ManyToOne(targetEntity="GameLevel", inversedBy="locations")
      */
-    protected $gameLevel;
+    protected $level = null;
     /**
      * @Column(type="decimal", scale=6, precision=10)
      */
@@ -21,45 +21,73 @@ class Location {
      * @Column(type="decimal", scale=6, precision=10)
      */
     protected $lat;
-    
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * @param $id
+     * @return Location
+     */
     public function setId($id)
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getGameLevel()
+    /**
+     * @return GameLevel
+     */
+    public function getLevel()
     {
-        return $this->gameLevel;
+        return $this->level;
     }
 
-    public function setGameLevel($gameLevel)
+    /**
+     * @param GameLevel $level
+     * @return Location
+     */
+    public function setLevel($level)
     {
-        $this->gameLevel = $gameLevel;
+        $this->level = $level;
         return $this;
     }
 
+    /**
+     * @return float
+     */
     public function getLng()
     {
         return $this->lng;
     }
 
+    /**
+     * @param float $lng
+     * @return Location
+     */
     public function setLng($lng)
     {
         $this->lng = $lng;
         return $this;
     }
 
+    /**
+     * @return float
+     */
     public function getLat()
     {
         return $this->lat;
     }
 
+    /**
+     * @param float $lat
+     * @return Location
+     */
     public function setLat($lat)
     {
         $this->lat = $lat;

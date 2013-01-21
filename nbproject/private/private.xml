@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Entity/Game.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Games/Crawler/PastGames.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Entity/GameLevel.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Games/Crawler/GameScenario.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Entity/GameDomain.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Entity/Location.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Games/Crawler/CrawlerAbstract.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/En/Games/Crawler/GameDetails.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/cli-config.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/app.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/resources/config/prod.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/controllers.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/console</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/src/console.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/tests/unit/En/Games/Crawler/GameDetailsTest.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/tests/stubs/gamedetails.html</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/tests/unit/En/Games/Crawler/PastGamesTest.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/tests/unit/En/Games/Crawler/GameScenarioTest.php</file>
+        <file>file:/home/nethunter/Documents/Lab/en-mapper/web/index.php</file>
+    </open-files>
 </project-private>

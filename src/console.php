@@ -48,7 +48,7 @@ $console
             $game = new En\Entity\Game();
             $game->setDomain($domain);
             $game->setExtId(39352);
-            $game->setTitle('Эта музыка будет вечной');
+            $game->setName('Эта музыка будет вечной');
             $game->setNum(85);
             $game->setIsIndexed(false);
             $game->setLink('/GameDetails.aspx?gid=39352');
