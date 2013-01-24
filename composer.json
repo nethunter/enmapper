@@ -44,8 +44,5 @@
             "SKE": "src/",
             "En": "src/"
         }
-    },
-    "config": {
-        "bin-dir": "bin"
     }
 }

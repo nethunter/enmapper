@@ -9,21 +9,26 @@ class Location {
      * @Id @Column(type="integer") @GeneratedValue
      */    
     protected $id;
+    
     /**
      * @ManyToOne(targetEntity="GameLevel", inversedBy="locations")
      */
     protected $level = null;
+
     /**
      * @Column(type="decimal", scale=6, precision=10)
      */
     protected $lng;
+
     /**
      * @Column(type="decimal", scale=6, precision=10)
      */
     protected $lat;
 
     /**
-     * @return mixed
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {
@@ -31,35 +36,22 @@ class Location {
     }
 
     /**
-     * @param $id
+     * Set lng
+     *
+     * @param float $lng
      * @return Location
      */
-    public function setId($id)
+    public function setLng($lng)
     {
-        $this->id = $id;
+        $this->lng = $lng;
+    
         return $this;
     }
 
     /**
-     * @return GameLevel
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
-     * @param GameLevel $level
-     * @return Location
-     */
-    public function setLevel($level)
-    {
-        $this->level = $level;
-        return $this;
-    }
-
-    /**
-     * @return float
+     * Get lng
+     *
+     * @return float 
      */
     public function getLng()
     {
@@ -67,17 +59,22 @@ class Location {
     }
 
     /**
-     * @param float $lng
+     * Set lat
+     *
+     * @param float $lat
      * @return Location
      */
-    public function setLng($lng)
+    public function setLat($lat)
     {
-        $this->lng = $lng;
+        $this->lat = $lat;
+    
         return $this;
     }
 
     /**
-     * @return float
+     * Get lat
+     *
+     * @return float 
      */
     public function getLat()
     {
@@ -85,12 +82,25 @@ class Location {
     }
 
     /**
-     * @param float $lat
+     * Set level
+     *
+     * @param \En\Entity\GameLevel $level
      * @return Location
      */
-    public function setLat($lat)
+    public function setLevel(\En\Entity\GameLevel $level = null)
     {
-        $this->lat = $lat;
+        $this->level = $level;
+    
         return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return \En\Entity\GameLevel 
+     */
+    public function getLevel()
+    {
+        return $this->level;
     }
 }

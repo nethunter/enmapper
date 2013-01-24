@@ -31,6 +31,7 @@ class PastGamesTest extends \PHPUnit_Framework_TestCase
                 'type' => 'Quest',
                 'number' => 85,
                 'title' => 'Эта музыка будет вечной',
+                'ext_id' => 39352,
                 'link' => '/GameDetails.aspx?gid=39352'
             )
         );

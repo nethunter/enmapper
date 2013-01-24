@@ -1,5 +1,5 @@
 {
-    "hash": "07614bf7ceccabd144de4c68ae318b0c",
+    "hash": "8350e31af8077a78e2b61f6da83ad4c3",
     "packages": [
         {
             "name": "doctrine/common",
@@ -11,7 +11,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/common/zipball/bb0aebbf234db52df476a2b473d434745b34221c",
+                "url": "https://github.com/doctrine/common/archive/bb0aebbf234db52df476a2b473d434745b34221c.zip",
                 "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
                 "shasum": ""
             },
@@ -30,6 +30,7 @@
                     "Doctrine\\Common": "lib/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -53,9 +54,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -75,19 +76,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "5b8a665a90d64bd98e3a9847b6af04934f4935ac"
+                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/5b8a665a90d64bd98e3a9847b6af04934f4935ac.zip",
-                "reference": "5b8a665a90d64bd98e3a9847b6af04934f4935ac",
+                "url": "https://github.com/doctrine/dbal/archive/fd45c6f6baa618d871f3201fabe76df5043abb1e.zip",
+                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "2013-01-19 18:24:19",
+            "time": "2013-01-20 11:50:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -138,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "6829c464e88cccd7a2a0714e42e95f3930b38e37"
+                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/archive/6829c464e88cccd7a2a0714e42e95f3930b38e37.zip",
-                "reference": "6829c464e88cccd7a2a0714e42e95f3930b38e37",
+                "url": "https://github.com/doctrine/doctrine2/archive/fdd0af34e6fced967b8751bc3e4792c11ef86d57.zip",
+                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57",
                 "shasum": ""
             },
             "require": {
@@ -155,7 +156,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2013-01-12 09:32:44",
+            "time": "2013-01-20 19:35:21",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -356,7 +357,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/zipball/87410e986d995553dad04d67df993c702a6ef1c5",
+                "url": "https://github.com/kriswallsmith/assetic/archive/87410e986d995553dad04d67df993c702a6ef1c5.zip",
                 "reference": "87410e986d995553dad04d67df993c702a6ef1c5",
                 "shasum": ""
             },
@@ -370,6 +371,7 @@
                     "Assetic": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -507,13 +509,14 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2011-10-24 03:39:02",
+            "time": "2011-10-24 02:39:02",
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Monolog": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -631,12 +634,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Silex.git",
-                "reference": "86b9a18de51e289d930cdce7f88a8aedb4053911"
+                "reference": "ca7e2dc4a5e2925e21e29895eb64714e675570dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Silex/archive/86b9a18de51e289d930cdce7f88a8aedb4053911.zip",
-                "reference": "86b9a18de51e289d930cdce7f88a8aedb4053911",
+                "url": "https://github.com/fabpot/Silex/archive/ca7e2dc4a5e2925e21e29895eb64714e675570dd.zip",
+                "reference": "ca7e2dc4a5e2925e21e29895eb64714e675570dd",
                 "shasum": ""
             },
             "require": {
@@ -671,7 +674,7 @@
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2013-01-19 14:44:48",
+            "time": "2013-01-20 08:24:37",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1705,6 +1708,7 @@
             },
             "time": "2012-12-08 20:57:21",
             "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],

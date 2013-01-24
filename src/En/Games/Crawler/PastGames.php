@@ -28,15 +28,22 @@ class PastGames extends CrawlerAbstract
         $gamesTableDetails = array();
         for ($i = 0; $i < $gamesCount; $i++) {
             $game = $gamesTable->eq($i);
-            $number = $game->filter('td span span')->text();
-         
             $gameDetails = $game->filterXPath('//td[4]/a');
-            
+
+            $number = $game->filter('td span span')->text();
+            $link = $gameDetails->attr('href');
+            $link_matches = preg_match('/.*gid=(\d+)/', $link, $link_groups);
+
+            if ($link_matches) {
+                $ext_id = $link_groups[1];
+            }
+
             $gameData = array(
                 'type' => $game->filterXPath('//tr/td[2]/span')->text(),
-                'number' => $game->filter('td span span')->text(),
+                'number' => (int)$number,
                 'title' => $gameDetails->text(),
-                'link' => $gameDetails->attr('href')
+                'link' => $link,
+                'ext_id' => $ext_id
             );
             
             if ('Quest' == $gameData['type']) {

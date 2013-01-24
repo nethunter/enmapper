@@ -10,42 +10,59 @@ class Game
      * @Id @Column(type="integer") @GeneratedValue
      */
     protected $id;
+
     /**
      * @ManyToOne(targetEntity="GameDomain", inversedBy="games")
      */
     protected $domain;
+
     /**
      *
      * @Column(type="integer")
      */
     protected $extId;
+
     /**
      * @Column(type="integer")
      */
     protected $num;
+
     /**
      * @Column(type="string", length=32)
      */
     protected $type;
+
     /**
      * @Column(type="string")
      */
     protected $link;
+
     /**
      * @Column(type="string")
      */
     protected $name;
+
     /**
      * @Column(type="boolean")
      */
     protected $isIndexed;
+
     /**
      * @OneToMany(targetEntity="GameLevel", mappedBy="addGameLevel")
      */
     protected $levels;
-
     /**
-     * @return mixed
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->levels = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {
@@ -53,35 +70,22 @@ class Game
     }
 
     /**
-     * @param $id
+     * Set extId
+     *
+     * @param integer $extId
      * @return Game
      */
-    public function setId($id)
+    public function setExtId($extId)
     {
-        $this->id = $id;
+        $this->extId = $extId;
+    
         return $this;
     }
 
     /**
-     * @return GameDomain
-     */
-    public function getDomain()
-    {
-        return $this->domain;
-    }
-
-    /**
-     * @param GameDomain $domain
-     * @return Game
-     */
-    public function setDomain(GameDomain $domain)
-    {
-        $this->domain = $domain;
-        return $this;
-    }
-
-    /**
-     * @return mixed
+     * Get extId
+     *
+     * @return integer 
      */
     public function getExtId()
     {
@@ -89,17 +93,22 @@ class Game
     }
 
     /**
-     * @param $extId
+     * Set num
+     *
+     * @param integer $num
      * @return Game
      */
-    public function setExtId($extId)
+    public function setNum($num)
     {
-        $this->extId = $extId;
+        $this->num = $num;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get num
+     *
+     * @return integer 
      */
     public function getNum()
     {
@@ -107,17 +116,22 @@ class Game
     }
 
     /**
-     * @param $num
+     * Set type
+     *
+     * @param string $type
      * @return Game
      */
-    public function setNum($num)
+    public function setType($type)
     {
-        $this->num = $num;
+        $this->type = $type;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get type
+     *
+     * @return string 
      */
     public function getType()
     {
@@ -125,17 +139,22 @@ class Game
     }
 
     /**
-     * @param $type
+     * Set link
+     *
+     * @param string $link
      * @return Game
      */
-    public function setType($type)
+    public function setLink($link)
     {
-        $this->type = $type;
+        $this->link = $link;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get link
+     *
+     * @return string 
      */
     public function getLink()
     {
@@ -143,17 +162,22 @@ class Game
     }
 
     /**
-     * @param $link
+     * Set name
+     *
+     * @param string $name
      * @return Game
      */
-    public function setLink($link)
+    public function setName($name)
     {
-        $this->link = $link;
+        $this->name = $name;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get name
+     *
+     * @return string 
      */
     public function getName()
     {
@@ -161,17 +185,22 @@ class Game
     }
 
     /**
-     * @param $title
+     * Set isIndexed
+     *
+     * @param boolean $isIndexed
      * @return Game
      */
-    public function setName($title)
+    public function setIsIndexed($isIndexed)
     {
-        $this->name = $title;
+        $this->isIndexed = $isIndexed;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get isIndexed
+     *
+     * @return boolean 
      */
     public function getIsIndexed()
     {
@@ -179,30 +208,58 @@ class Game
     }
 
     /**
-     * @param $isIndexed
+     * Set domain
+     *
+     * @param \En\Entity\GameDomain $domain
      * @return Game
      */
-    public function setIsIndexed($isIndexed)
+    public function setDomain(\En\Entity\GameDomain $domain = null)
     {
-        $this->isIndexed = $isIndexed;
+        $this->domain = $domain;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get domain
+     *
+     * @return \En\Entity\GameDomain 
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Add levels
+     *
+     * @param \En\Entity\GameLevel $levels
+     * @return Game
+     */
+    public function addLevel(\En\Entity\GameLevel $levels)
+    {
+        $this->levels[] = $levels;
+    
+        return $this;
+    }
+
+    /**
+     * Remove levels
+     *
+     * @param \En\Entity\GameLevel $levels
+     */
+    public function removeLevel(\En\Entity\GameLevel $levels)
+    {
+        $this->levels->removeElement($levels);
+    }
+
+    /**
+     * Get levels
+     *
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getLevels()
     {
         return $this->levels;
-    }
-
-    /**
-     * @param En\Entity\GameLevel $level
-     * @return Game
-     */
-    public function addLevel(En\Entity\GameLevel $level)
-    {
-        $this->levels[] = $gameLevel;
-        return $this;
     }
 }

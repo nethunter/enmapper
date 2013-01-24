@@ -10,15 +10,25 @@ class GameDomain
      * @Id @Column(type="integer") @GeneratedValue
      */
     protected $id;
+
     /**
      * @Column(type="string")
      */
     protected $name;
+
     /**
      * @OneToMany(targetEntity="Game", mappedBy="addGame")
      */
     protected $games;
-    
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -51,6 +61,14 @@ class GameDomain
         $this->games[] = $game;
         return $this;
     }
-
     
+    /**
+     * Remove games
+     *
+     * @param \En\Entity\Game $games
+     */
+    public function removeGame(\En\Entity\Game $games)
+    {
+        $this->games->removeElement($games);
+    }
 }

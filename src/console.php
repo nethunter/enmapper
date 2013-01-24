@@ -27,11 +27,11 @@ $console
                 'Use local stub, instead of production code', false)
         ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
             $dev = $input->getOption('dev');
-            
-            $pastGames = new En\Games\Crawler\PastGames($app['en_domain'], 1, $dev);
-            $pastGameList = $pastGames->getList();
-            
-            $output->writeln(print_r($pastGameList, true));
+
+            $gameList = new En\Games\GameList($app, $app['en_domain']);
+            $gameResult = $gameList->updateGameIndex();
+
+            $output->writeln(print_r($gameResult, true));
         });
 
                 
@@ -55,16 +55,16 @@ $console
             $game->setType('quest');
             $em->persist($game);
             
-            $gameLevel = new En\Entity\GameLevel();
-            $gameLevel->setGame($game);
-            $gameLevel->setName('Level #24 "Последняя заглушка"');
-            $gameLevel->setNum(24);
+            $level = new En\Entity\GameLevel();
+            $level->setGame($game);
+            $level->setName('Level #24 "Последняя заглушка"');
+            $level->setNum(24);
             $content = "Autopass: in 5 minutes\t\t\t\t\t\tTask for "
                     . "allНу что ж, молодцы!\rБанально надеемся, что вам "
                     . "тупо понравилось! :)\rЖдем вас в баре Пророк-Сайгон, "
                     . "ул. Левонтин 11, Тель Авив.";
-            $gameLevel->setContent($content);
-            $em->persist($gameLevel);
+            $level->setContent($content);
+            $em->persist($level);
             
             $coordinates = array(
                 array(
@@ -95,7 +95,7 @@ $console
             
             foreach($coordinates as $coordinate) {
                 $location = new En\Entity\Location();
-                $location->setGameLevel($gameLevel);
+                $location->setLevel($level);
                 $location->setLat($coordinate['position'][0]);
                 $location->setLng($coordinate['position'][1]);
                 $em->persist($location);

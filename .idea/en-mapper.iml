@@ -7,12 +7,12 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar:///home/nethunter/Documents/Lab/en-mapper/vendor/fabpot/goutte/goutte.phar" />
-          <root url="phar:///home/nethunter/Documents/Lab/en-mapper/composer.phar" />
+          <root url="phar:///home/nethunter/www/htdocs/enmapper/vendor/fabpot/goutte/goutte.phar" />
+          <root url="phar:///home/nethunter/www/htdocs/enmapper/composer.phar" />
         </CLASSES>
         <SOURCES>
-          <root url="phar:///home/nethunter/Documents/Lab/en-mapper/vendor/fabpot/goutte/goutte.phar" />
-          <root url="phar:///home/nethunter/Documents/Lab/en-mapper/composer.phar" />
+          <root url="phar:///home/nethunter/www/htdocs/enmapper/vendor/fabpot/goutte/goutte.phar" />
+          <root url="phar:///home/nethunter/www/htdocs/enmapper/composer.phar" />
         </SOURCES>
       </library>
     </orderEntry>

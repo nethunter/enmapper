@@ -9,22 +9,27 @@ class GameLevel {
      * @Id @Column(type="integer") @GeneratedValue
      */    
     protected $id;
+    
     /**
      * @ManyToOne(targetEntity="Game", inversedBy="levels")
      */
     protected $game;
+
     /**
      * @Column(type="integer")
      */    
     protected $num;
+
     /**
      * @Column(type="string")
      */    
     protected $name;
+
     /**
      * @Column(type="string", nullable=true)
      */    
     protected $link;
+
     /**
      * @Column(type="text")
      */    
@@ -36,7 +41,17 @@ class GameLevel {
     protected $locations;
 
     /**
-     * @return mixed
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->locations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {
@@ -44,35 +59,22 @@ class GameLevel {
     }
 
     /**
-     * @param $id
+     * Set num
+     *
+     * @param integer $num
      * @return GameLevel
      */
-    public function setId($id)
+    public function setNum($num)
     {
-        $this->id = $id;
+        $this->num = $num;
+    
         return $this;
     }
 
     /**
-     * @return Game
-     */
-    public function getGame()
-    {
-        return $this->game;
-    }
-
-    /**
-     * @param Game $game
-     * @return GameLevel
-     */
-    public function setGame($game)
-    {
-        $this->game = $game;
-        return $this;
-    }
-
-    /**
-     * @return mixed
+     * Get num
+     *
+     * @return integer 
      */
     public function getNum()
     {
@@ -80,17 +82,22 @@ class GameLevel {
     }
 
     /**
-     * @param $num
+     * Set name
+     *
+     * @param string $name
      * @return GameLevel
      */
-    public function setNum($num)
+    public function setName($name)
     {
-        $this->num = $num;
+        $this->name = $name;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get name
+     *
+     * @return string 
      */
     public function getName()
     {
@@ -98,17 +105,22 @@ class GameLevel {
     }
 
     /**
-     * @param $name
+     * Set link
+     *
+     * @param string $link
      * @return GameLevel
      */
-    public function setName($name)
+    public function setLink($link)
     {
-        $this->name = $name;
+        $this->link = $link;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get link
+     *
+     * @return string 
      */
     public function getLink()
     {
@@ -116,17 +128,22 @@ class GameLevel {
     }
 
     /**
-     * @param $link
+     * Set content
+     *
+     * @param string $content
      * @return GameLevel
      */
-    public function setLink($link)
+    public function setContent($content)
     {
-        $this->link = $link;
+        $this->content = $content;
+    
         return $this;
     }
 
     /**
-     * @return mixed
+     * Get content
+     *
+     * @return string 
      */
     public function getContent()
     {
@@ -134,32 +151,58 @@ class GameLevel {
     }
 
     /**
-     * @param $content
+     * Set game
+     *
+     * @param \En\Entity\Game $game
      * @return GameLevel
      */
-    public function setContent($content)
+    public function setGame(\En\Entity\Game $game = null)
     {
-        $this->content = $content;
+        $this->game = $game;
+    
         return $this;
     }
 
     /**
-     * @return Location
+     * Get game
+     *
+     * @return \En\Entity\Game 
+     */
+    public function getGame()
+    {
+        return $this->game;
+    }
+
+    /**
+     * Add locations
+     *
+     * @param \En\Entity\Location $locations
+     * @return GameLevel
+     */
+    public function addLocation(\En\Entity\Location $locations)
+    {
+        $this->locations[] = $locations;
+    
+        return $this;
+    }
+
+    /**
+     * Remove locations
+     *
+     * @param \En\Entity\Location $locations
+     */
+    public function removeLocation(\En\Entity\Location $locations)
+    {
+        $this->locations->removeElement($locations);
+    }
+
+    /**
+     * Get locations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getLocations()
     {
         return $this->locations;
     }
-
-    /**
-     * @param Location $location
-     * @return GameLevel
-     */
-    public function addLocation($location)
-    {
-        $this->locations[] = $location;
-        return $this;
-    }
-
-    
 }
