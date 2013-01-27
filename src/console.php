@@ -28,7 +28,7 @@ $console
         ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
             $dev = $input->getOption('dev');
 
-            $gameList = new En\Games\GameList($app, $app['en_domain']);
+            $gameList = new En\Games\Indexer($app, $app['en_domain']);
             $gameResult = $gameList->updateGameIndex();
 
             $output->writeln(print_r($gameResult, true));

@@ -1,12 +1,11 @@
 <?php
 namespace En\Games;
 
-class GameListTest extends Web
+class IndexerTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testGetGameListUpdated()
     {
-        $gameList = new GameList(null, 'rusisrael.en.cx');
+        $gameList = new Indexer(null, 'rusisrael.en.cx');
         $gameList->updateGameIndex();
     }
 }

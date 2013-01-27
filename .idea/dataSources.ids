@@ -11,10 +11,10 @@
     <default-dialect>MySQL</default-dialect>
     <libraries>
       <library>
-        <url>jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.22-bin.jar!/</url>
+        <url>jar://$USER_HOME$/bin/mysql-connector-java-5.1.22-bin.jar!/</url>
       </library>
       <library>
-        <url>file://$USER_HOME$/Downloads/mysql-connector-license.txt</url>
+        <url>file://$USER_HOME$/bin/mysql-connector-license.txt</url>
       </library>
     </libraries>
     <table name="game" schema="" catalog="enmapper" type="TABLE">
