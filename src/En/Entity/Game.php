@@ -262,4 +262,21 @@ class Game
     {
         return $this->levels;
     }
+
+    /**
+     * Popuplate basic data from details array
+     *
+     * @param Array $gameDetails
+     */
+    public function fromArray($gameDetails)
+    {
+        $this->type = $gameDetails['type'];
+        $this->num = $gameDetails['number'];
+        $this->name = $gameDetails['title'];
+        $this->link = $gameDetails['link'];
+        $this->extId = $gameDetails['ext_id'];
+        $this->isIndexed = false;
+
+        return $this;
+    }
 }
