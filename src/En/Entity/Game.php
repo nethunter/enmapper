@@ -48,9 +48,15 @@ class Game
     protected $isIndexed;
 
     /**
+     * @Column(type="text", nullable=true)
+     */
+    protected $content;
+
+    /**
      * @OneToMany(targetEntity="GameLevel", mappedBy="addGameLevel")
      */
     protected $levels;
+
     /**
      * Constructor
      */
@@ -228,6 +234,29 @@ class Game
     public function getDomain()
     {
         return $this->domain;
+    }
+
+    /**
+     * Sets the content field
+     *
+     * @param string $content
+     * @return Game
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Returns the game description
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 
     /**

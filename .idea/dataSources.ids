@@ -3,7 +3,7 @@
     <extra-name-characters>#@</extra-name-characters>
     <identifier-quote-string>`</identifier-quote-string>
     <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-    <jdbc-url>jdbc:mysql://localhost:3307/enmapper</jdbc-url>
+    <jdbc-url>jdbc:mysql://localhost:3307/enmapper? useUnicode=yes&amp;characterEncoding=UTF-8</jdbc-url>
     <user-name>enmapper</user-name>
     <user-password>df99dfc4dfc7df9edfdadfdadf99dfd8</user-password>
     <schema-pattern>enmapper.*</schema-pattern>

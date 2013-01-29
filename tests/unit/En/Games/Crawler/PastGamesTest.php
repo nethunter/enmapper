@@ -22,7 +22,7 @@ class PastGamesTest extends \PHPUnit_Framework_TestCase
                 ->will($this->returnValue($crawler));
 
         $gameList = $pastGamesCrawl->getData();
-        
+
         $this->assertNotEmpty($gameList);
         $this->assertCount(8, $gameList);
         $this->assertEquals(
