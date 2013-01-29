@@ -28,7 +28,7 @@ class GameScenarioTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(24, $gameScenario);
         $this->assertContains(
             array(
-                'name' => 'Level #24 "Последняя заглушка"',
+                'name' => 'Последняя заглушка',
                 'num' => 24,
                 'content' => "Autopass: in 5 minutes\t\t\t\t\t\tTask for "
                     . "allНу что ж, молодцы!\rБанально надеемся, что вам "

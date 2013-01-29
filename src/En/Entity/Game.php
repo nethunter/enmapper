@@ -53,7 +53,7 @@ class Game
     protected $content;
 
     /**
-     * @OneToMany(targetEntity="GameLevel", mappedBy="addGameLevel")
+     * @OneToMany(targetEntity="GameLevel", mappedBy="addLevel", cascade={"persist", "remove"})
      */
     protected $levels;
 
@@ -262,13 +262,14 @@ class Game
     /**
      * Add levels
      *
-     * @param \En\Entity\GameLevel $levels
+     * @param \En\Entity\GameLevel $level
      * @return Game
      */
-    public function addLevel(\En\Entity\GameLevel $levels)
+    public function addLevel(\En\Entity\GameLevel $level)
     {
-        $this->levels[] = $levels;
-    
+        $this->levels[] = $level;
+        $level->setGame($this);
+
         return $this;
     }
 
@@ -290,6 +291,12 @@ class Game
     public function getLevels()
     {
         return $this->levels;
+    }
+
+    public function __toString()
+    {
+        $title = '#' . $this->num . ' - ' . $this->name;
+        return $title;
     }
 
     /**

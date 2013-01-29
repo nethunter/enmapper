@@ -12,7 +12,7 @@ abstract class CrawlerAbstract
     {
         $this->domain = $domain;
     }
-    
+
     public function getCrawler()
     {
         $requestUrl = 'http://' . $this->domain . $this->url;
@@ -21,6 +21,11 @@ abstract class CrawlerAbstract
         $crawler = $client->request('GET', $requestUrl);
         
         return $crawler;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
     }
     
     abstract public function getData();

@@ -98,9 +98,9 @@ $app->match('/map', function() use ($app) {
         $domain = $game->getDomain();
 
         $marker_options = array(
-            'title' => $game->getNum() . ' - ' . $gameLevel->getName(),
-            'content' => '<p><strong>' . $game->getName() . '</strong><br />'
-                . $gameLevel->getNum() . '</p>'
+            'title' => '#' . $game->getNum() . ' - ' . $gameLevel,
+            'content' => '<p><strong>' . $game . '</strong><br />'
+                . '<a href=' . $gameLevel->getFullLink() . ' target=\'en_level_view\'>' . $gameLevel . '</a></p>'
         );
 
         $lattitude = $location->getLat();

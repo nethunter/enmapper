@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25289ba8-0d4f-4c4e-9667-83e67791c612" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/En/Games/LocationFilter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Entity/Game.php" afterPath="$PROJECT_DIR$/src/En/Entity/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Entity/GameLevel.php" afterPath="$PROJECT_DIR$/src/En/Entity/GameLevel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php" afterPath="$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/Crawler/GameScenario.php" afterPath="$PROJECT_DIR$/src/En/Games/Crawler/GameScenario.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/Indexer.php" afterPath="$PROJECT_DIR$/src/En/Games/Indexer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php" afterPath="$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/console.php" afterPath="$PROJECT_DIR$/src/console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers.php" afterPath="$PROJECT_DIR$/src/controllers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/En/Games/Crawler/GameScenarioTest.php" afterPath="$PROJECT_DIR$/tests/unit/En/Games/Crawler/GameScenarioTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php" afterPath="$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php" />
     </list>
     <ignored path="en-mapper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,73 +41,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Indexer.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Indexer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/En/Games/Indexer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="3531" selection-end="3531" vertical-scroll-proportion="0.80656505">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Entity/Game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="41" selection-start="755" selection-end="755" vertical-scroll-proportion="-10.583333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameLevel.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Entity/GameLevel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="45" selection-start="239" selection-end="239" vertical-scroll-proportion="-8.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameDetails.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/GameDetails.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="39" selection-start="458" selection-end="458" vertical-scroll-proportion="-12.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PastGames.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1129" selection-end="1361" vertical-scroll-proportion="-22.416666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrawlerClient.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/CrawlerClient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="5" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PastGamesTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="8" selection-start="316" selection-end="316" vertical-scroll-proportion="-6.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/console.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="48" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
+            <state line="163" column="0" selection-start="5506" selection-end="5506" vertical-scroll-proportion="-11.708333">
               <folding />
             </state>
           </provider>
@@ -109,16 +53,77 @@
       <file leaf-file-name="IndexerTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="25" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrawlerAbstract.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php">
+      <file leaf-file-name="LocationFilterTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="28" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+            <state line="66" column="0" selection-start="1973" selection-end="1973" vertical-scroll-proportion="-11.708333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassLoader.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="151" column="0" selection-start="3904" selection-end="3904" vertical-scroll-proportion="-7.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enmapper.game" pinned="false" current="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game">
+          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="73" selection-start="3615" selection-end="3615" vertical-scroll-proportion="-9.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameLevel.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/En/Entity/GameLevel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="221" column="0" selection-start="3788" selection-end="3788" vertical-scroll-proportion="-15.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationFilter.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="57" selection-start="282" selection-end="282" vertical-scroll-proportion="0.40834847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpunit" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/bin/phpunit">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/En/Entity/Game.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="294" column="0" selection-start="4621" selection-end="4621" vertical-scroll-proportion="-10.666667">
               <folding />
             </state>
           </provider>
@@ -142,24 +147,26 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="db-console:/587d6999/f0b79e36-cff6-401e-83b1-b26a53c06faa/" />
-        <option value="$PROJECT_DIR$/src/controllers.php" />
-        <option value="$PROJECT_DIR$/src/En/Entity/Location.php" />
-        <option value="$PROJECT_DIR$/src/En/Entity/GameLevel.php" />
-        <option value="$PROJECT_DIR$/src/En/Entity/GameDomain.php" />
-        <option value="$PROJECT_DIR$/tests/functional/ApplicationTest.php" />
         <option value="$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php" />
-        <option value="$PROJECT_DIR$/src/console.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/GameListTest.php" />
         <option value="$PROJECT_DIR$/src/En/CrawlerClient.php" />
         <option value="$PROJECT_DIR$/src/En/Games/GameList.php" />
-        <option value="$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php" />
+        <option value="$PROJECT_DIR$/src/console.php" />
+        <option value="$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php" />
+        <option value="$PROJECT_DIR$/tests/unit/En/Games/Crawler/GameScenarioTest.php" />
+        <option value="$PROJECT_DIR$/src/En/Games/Crawler/GameScenario.php" />
         <option value="$PROJECT_DIR$/src/En/Entity/Game.php" />
+        <option value="$PROJECT_DIR$/src/En/Entity/GameLevel.php" />
+        <option value="$PROJECT_DIR$/src/controllers.php" />
         <option value="$PROJECT_DIR$/src/En/Games/Indexer.php" />
+        <option value="$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php" />
+        <option value="$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php" />
+        <option value="$PROJECT_DIR$/src/En/Games/LocationFilter.php" />
       </list>
     </option>
   </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9002" />
   <component name="PhpServers">
     <option name="servers">
       <server host="localhost" name="Local PHP" port="8181" />
@@ -172,9 +179,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="-1" />
     <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="height" value="1081" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -440,18 +447,18 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="218" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="204" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$USER_HOME$/bin" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="223" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1129" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1132" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1129" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="219" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="214" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="Database.TableEditor.Splitter" value="0.8999999" />
+    <property name="Database.TableEditor.Splitter" value="0.91009176" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
@@ -460,12 +467,12 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="reference.webide.settings.project.settings.php.debug" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="PHPUnit.GameDetailsTest">
     <configuration default="false" name="GameDetailsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -529,17 +536,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="-1" width="1855" height="1081" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25872576" sideWeight="0.67096776" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15734072" sideWeight="0.4344086" order="1" side_tool="true" content_ui="tabs" x="833" y="383" width="319" height="387" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25872576" sideWeight="0.6752688" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15900277" sideWeight="0.2956989" order="1" side_tool="true" content_ui="tabs" x="833" y="383" width="319" height="387" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15734072" sideWeight="0.5580645" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3254818" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15900277" sideWeight="0.372043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32473117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -606,79 +613,39 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/En/Games/Indexer.php</url>
+          <line>161</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phpunit.xml">
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
+        <state line="556" column="20" selection-start="16880" selection-end="16880" vertical-scroll-proportion="0.34664246">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli-config.php">
+    <entry file="file://$PROJECT_DIR$/src/En/Entity/Location.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="3" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+        <state line="91" column="8" selection-start="1424" selection-end="1424" vertical-scroll-proportion="-11.458333">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/WebTestCase.php">
+    <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/GameScenario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="15" selection-start="466" selection-end="477" vertical-scroll-proportion="0.24618992" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/functional/ApplicationTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+        <state line="46" column="0" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-13.583333">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/console.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="48" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/CrawlerClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="28" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1129" selection-end="1361" vertical-scroll-proportion="-22.416666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="316" selection-end="316" vertical-scroll-proportion="-6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game">
+    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game_level">
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
       </provider>
@@ -690,28 +657,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/En/Entity/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="41" selection-start="755" selection-end="755" vertical-scroll-proportion="-10.583333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/GameDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="39" selection-start="458" selection-end="458" vertical-scroll-proportion="-12.5">
+        <state line="294" column="0" selection-start="4621" selection-end="4621" vertical-scroll-proportion="-10.666667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/En/Entity/GameLevel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="239" selection-end="239" vertical-scroll-proportion="-8.125">
+        <state line="221" column="0" selection-start="3788" selection-end="3788" vertical-scroll-proportion="-15.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="73" selection-start="3615" selection-end="3615" vertical-scroll-proportion="-9.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="0" selection-start="3904" selection-end="3904" vertical-scroll-proportion="-7.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/bin/phpunit">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/En/Games/Indexer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="3531" selection-end="3531" vertical-scroll-proportion="0.80656505">
+        <state line="163" column="0" selection-start="5506" selection-end="5506" vertical-scroll-proportion="-11.708333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="1973" selection-end="1973" vertical-scroll-proportion="-11.708333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="57" selection-start="282" selection-end="282" vertical-scroll-proportion="0.40834847">
           <folding />
         </state>
       </provider>

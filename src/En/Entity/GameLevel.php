@@ -36,7 +36,7 @@ class GameLevel {
     protected $content;
 
     /**
-     * @OneToMany(targetEntity="Location", mappedBy="addLocation")
+     * @OneToMany(targetEntity="Location", mappedBy="addLocation", cascade={"persist", "remove"})
      */
     protected $locations;
 
@@ -176,13 +176,14 @@ class GameLevel {
     /**
      * Add locations
      *
-     * @param \En\Entity\Location $locations
+     * @param \En\Entity\Location $location
      * @return GameLevel
      */
-    public function addLocation(\En\Entity\Location $locations)
+    public function addLocation(\En\Entity\Location $location)
     {
-        $this->locations[] = $locations;
-    
+        $this->locations[] = $location;
+        $location->setLevel($this);
+
         return $this;
     }
 
@@ -204,5 +205,28 @@ class GameLevel {
     public function getLocations()
     {
         return $this->locations;
+    }
+
+    /**
+     * If the level's number is above 0, return it as part of the title.
+     * Otherwise - just the title.
+     *
+     * @return string A full text string of the level
+     */
+    public function __toString()
+    {
+        if ($this->num) {
+            return 'Level #' . $this->num . ' - "' . $this->name . '"';
+        } else {
+            return $this->name;
+        }
+    }
+
+    public function getFullLink()
+    {
+        $link = 'http://' . $this->getGame()->getDomain()->getName();
+        $link .= $this->link;
+
+        return $link;
     }
 }
