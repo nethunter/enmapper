@@ -56,6 +56,18 @@ class LocationFilterTest extends \PHPUnit_Framework_TestCase
         ), $coordinates);
     }
 
+    public function testMatchDMSCoordinates()
+    {
+        $text = "Sample text with coordinates: 32° 05' 37\" N\n34° 50' 49\" E nuff said.";
+
+        $filter = new LocationFilter($text);
+        $coordinates = $filter->matchDMSCoordinates($text);
+
+        $this->assertEquals(array(
+            array(32.093611111111116, 34.846944444444446)
+        ), $coordinates);
+    }
+
     public function testVerifyDatesArentMatched()
     {
         $text = "Game begins on the 19.08.2011, at 10:00 in Jerusalem";

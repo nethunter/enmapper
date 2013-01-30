@@ -30,7 +30,8 @@
         "symfony/browser-kit"   : "2.1.*",
         "doctrine/dbal"         : "2.3.*",
         "doctrine/orm"          : "2.3.*",
-        "taluu/doctrine-orm-provider" : "1.0.*"
+        "taluu/doctrine-orm-provider" : "1.0.*",
+        "treffynnon/navigator": "1.*"
     },
     "require-dev": {
         "phing/phing"           : "2.4.*"
