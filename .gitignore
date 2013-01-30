@@ -2,8 +2,8 @@ resources/cache/*
 resources/log/*
 vendor/
 web/assets/*
-.*~
+*~
 /nbproject/private/
 /bin/
 .idea/workspace.xml
-
+src/cache/*
