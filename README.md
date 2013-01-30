@@ -1,10 +1,7 @@
-Silex - Kitchen Sink Edition
+EnMapper - Encounter Scrapper and Mapper
 ============================
 
-This project is a sample or a bootstrap silex application.
-You can use it for your next php application.
-
-For more informations, see the
-[**dedicated page**](http://lyrixx.github.com/Silex-Kitchen-Edition).
-
-[![Build Status](https://secure.travis-ci.org/lyrixx/Silex-Kitchen-Edition.png?branch=master)](http://travis-ci.org/lyrixx/Silex-Kitchen-Edition)
+Reading Material
+================
+Custom google maps markers with gd:
+http://www.devinrolsen.com/google-maps-marker-icons-with-numbers-using-php-gd/
