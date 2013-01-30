@@ -2,5 +2,26 @@
 {% set active = 'homepage' %}
 
 {% block content %}
+    <h1>Welcome to EnMapper!</h1>
+    <p>
+        EnMapper is my personal experiment with Silex/Twig/Doctrine2/Composer/Google Maps API.
+    </p>
+    <p>
+        Basically, EnMapper is a mapping/indexing platform for scraping
+        <a href="http://en.wikipedia.org/wiki/Encounter_(game)">Encounter</a> games, indexing them,
+        trying to extract locations and coordinates from the levels, and putting them on a map.
+    </p>
+    <p>
+        Having joined the game not that long ago, it was interesting for me, to see what locations
+        and areas in Israel were used in previous games, what areas were over-used, and where there could be
+        more virgin areas.
+    </p>
+    <p>
+       This system currently supports only the DecDeg coordinates format (31.921452, 34.882401).
+       But DMS and MinDec formats are planned in the future.
+    </p>
+    <p>
+        <strong><a href="{{ app.url_generator.generate('map') }}">To the map!</a></strong>
+    </p>
 
 {% endblock %}
