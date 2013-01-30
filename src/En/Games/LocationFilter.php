@@ -25,8 +25,6 @@ class LocationFilter
         $matched = preg_match_all('/[0-9]{1,2}[:|°|º][0-9]{1,2}[:|\'](?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b)"?[N|S|E|W]/',
             $text, $matches);
 
-        print_r($matches);
-
         return $coordinates;
     }
 
