@@ -15,75 +15,6 @@ $app->match('/map', function() use ($app) {
 
     $em = $app['db.orm.em'];
 
-//    $positions = array(
-//        array(
-//            'position' => array(31.921452, 34.882401),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'От автора игры'
-//        ),
-//        array(
-//            'position' => array(31.860161, 34.923788),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'Level #5 "Тель Гезер"'
-//        ),
-//        array(
-//            'position' => array(31.964167, 34.783056 ),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'Level #9 "Ришон - пианино"'
-//        ),
-//        array(
-//            'position' => array(31.964167, 34.783056 ),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'Level #9 "Ришон - пианино"'
-//        ),
-//        array(
-//            'position' => array(32.101478, 34.827758),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'Level #12 "Агентский уровень"'
-//        ),
-//        array(
-//            'position' => array(32.083373, 34.9575488),
-//            'game' => '#85 - Эта музыка будет вечной',
-//            'level' => 'Level #18 "Могила Шейха"'
-//        ),
-//        
-//        array(
-//            'position' => array(31.820252, 34.662541),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'От автора игры'
-//        ),
-//        array(
-//            'position' => array(31.807196, 34.638237),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #3 "В магазин"'
-//        ),
-//        array(
-//            'position' => array(31.78035, 34.621779),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #6 "К доктору"'
-//        ),
-//        array(
-//            'position' => array(31.813432, 34.641234),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #8 "Посыльные"'
-//        ),
-//        array(
-//            'position' => array(31.891214, 34.772018),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #10 "к директору"'
-//        ),
-//        array(
-//            'position' => array(31.886244, 34.792950),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #12 "Опять в дорогу"'
-//        ),
-//        array(
-//            'position' => array(31.995466, 34.910976),
-//            'game' => '#86 - "Пионерский лагерь"',
-//            'level' => 'Level #22 "Побег"'
-//        ),
-//    );
-
     $dql = 'SELECT l, gl, g, gd FROM En\Entity\Location l JOIN l.level gl JOIN gl.game g JOIN g.domain gd';
 
     $query = $app['db.orm.em']->createQuery($dql);
@@ -117,6 +48,12 @@ $app->match('/map', function() use ($app) {
     $map->setHeight('800px');
     
     $map->enableStreetView();
+    // Set cluster options
+    $cluster_options = array(
+        'maxZoom' => 10,
+        'gridSize' => null
+    );
+    $map->enableClustering( 'js/libs/markerclusterer_compiled.js', $cluster_options );
 
     return $app['twig']->render('map.html.twig', array(
         'map' => array(
