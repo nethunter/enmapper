@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25289ba8-0d4f-4c4e-9667-83e67791c612" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/libs/markerclusterer_compiled.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.html.twig" afterPath="$PROJECT_DIR$/resources/views/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/navigation.html.twig" afterPath="$PROJECT_DIR$/resources/views/navigation.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php" afterPath="$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/Indexer.php" afterPath="$PROJECT_DIR$/src/En/Games/Indexer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/En/Games/LocationFilter.php" afterPath="$PROJECT_DIR$/src/En/Games/LocationFilter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers.php" afterPath="$PROJECT_DIR$/src/controllers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php" afterPath="$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/console.php" afterPath="$PROJECT_DIR$/src/console.php" />
     </list>
     <ignored path="en-mapper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,94 +36,63 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="77" selection-start="1027" selection-end="1027" vertical-scroll-proportion="-14.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationFilter.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="625" selection-end="625" vertical-scroll-proportion="0.36660618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/console.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="29" selection-start="2467" selection-end="2467" vertical-scroll-proportion="-17.166666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PastGames.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="43" selection-start="383" selection-end="383" vertical-scroll-proportion="-10.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Indexer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/En/Games/Indexer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="64" selection-start="681" selection-end="681" vertical-scroll-proportion="-12.5">
+            <state line="80" column="17" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-8.416667">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enmapper.game_domain" pinned="false" current="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game_domain">
+          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="LocationFilterTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="-7.625">
+            <state line="52" column="38" selection-start="1559" selection-end="1579" vertical-scroll-proportion="-5.2083335">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationFilter.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="654" selection-end="654" vertical-scroll-proportion="-8.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestCase.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/share/php/PHPUnit/Framework/TestCase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="972" column="0" selection-start="26785" selection-end="26785" vertical-scroll-proportion="-7.7916665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phpunit" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/bin/phpunit">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="29" selection-start="265" selection-end="265" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="560" selection-end="560" vertical-scroll-proportion="-8.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigation.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/navigation.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="40" selection-start="66" selection-end="66" vertical-scroll-proportion="0.027223231">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/php-google-maps/php-google-maps/PHPGoogleMaps/Map.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2389" column="19" selection-start="68915" selection-end="68915" vertical-scroll-proportion="-15.541667">
-              <folding>
-                <marker date="1358719372550" expanded="false" signature="39793:39797" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,22 +115,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/En/Games/GameList.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/Crawler/PastGamesTest.php" />
-        <option value="$PROJECT_DIR$/src/console.php" />
         <option value="$PROJECT_DIR$/src/En/Games/Crawler/CrawlerAbstract.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/Crawler/GameScenarioTest.php" />
         <option value="$PROJECT_DIR$/src/En/Games/Crawler/GameScenario.php" />
         <option value="$PROJECT_DIR$/src/En/Entity/Game.php" />
         <option value="$PROJECT_DIR$/src/En/Entity/GameLevel.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php" />
-        <option value="$PROJECT_DIR$/src/En/Games/Indexer.php" />
         <option value="$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php" />
-        <option value="$PROJECT_DIR$/src/En/Games/LocationFilter.php" />
         <option value="$PROJECT_DIR$/src/controllers.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/resources/views/index.html.twig" />
         <option value="$PROJECT_DIR$/resources/views/navigation.html.twig" />
+        <option value="$PROJECT_DIR$/resources/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php" />
+        <option value="$PROJECT_DIR$/src/En/Games/Indexer.php" />
+        <option value="$PROJECT_DIR$/src/console.php" />
+        <option value="$PROJECT_DIR$/src/En/Games/LocationFilter.php" />
       </list>
     </option>
   </component>
@@ -240,6 +208,156 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="En" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="En" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="En" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="En" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en-mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enmapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="En" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,92 +575,14 @@
           <line>63</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/En/Games/LocationFilter.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/En/Games/LocationFilter.php</url>
-          <line>29</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/En/Entity/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="0" selection-start="4621" selection-end="4621" vertical-scroll-proportion="-10.666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/IndexerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Entity/GameLevel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="9" selection-start="3797" selection-end="3797" vertical-scroll-proportion="-15.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="0" selection-start="3904" selection-end="3904" vertical-scroll-proportion="-7.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Games/Indexer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="64" selection-start="681" selection-end="681" vertical-scroll-proportion="-12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/bin/phpunit">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="-7.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/share/php/PHPUnit/Framework/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="972" column="0" selection-start="26785" selection-end="26785" vertical-scroll-proportion="-7.7916665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="654" selection-end="654" vertical-scroll-proportion="-8.875">
           <folding />
         </state>
       </provider>
@@ -565,21 +605,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="265" selection-end="265" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="560" selection-end="560" vertical-scroll-proportion="-8.75">
+        <state line="9" column="29" selection-start="265" selection-end="265" vertical-scroll-proportion="0.2347826">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/navigation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="66" selection-end="66" vertical-scroll-proportion="0.027223231">
+        <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/bin/phpunit">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.624374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="77" selection-start="1027" selection-end="1027" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/Input/InputArgument.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="10" selection-start="472" selection-end="472" vertical-scroll-proportion="-0.17103763">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game_level">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e3db6107/f0b79e36-cff6-401e-83b1-b26a53c06faa/enmapper..game_domain">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/En/Games/LocationFilterTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="38" selection-start="1559" selection-end="1579" vertical-scroll-proportion="-5.2083335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/En/Games/Crawler/PastGames.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="383" selection-end="383" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/En/Games/Indexer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="17" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-8.416667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="29" selection-start="2467" selection-end="2467" vertical-scroll-proportion="-17.166666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/En/Games/LocationFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="625" selection-end="625" vertical-scroll-proportion="0.36660618">
           <folding />
         </state>
       </provider>

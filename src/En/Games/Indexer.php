@@ -18,9 +18,11 @@ class Indexer
         $this->app = $app;
     }
 
-    public function updateGameIndex()
+    public function updatePastGameIndex($page = 1)
     {
         $em = $this->app['db.orm.em'];
+
+        $missingGames = array();
 
         // We need the domain entity
         echo 'Retrieving the list of domains...' . PHP_EOL;
@@ -28,9 +30,45 @@ class Indexer
 
         foreach($gameDomains as $gameDomain) {
             echo 'Indexing ' . $gameDomain->getName() . PHP_EOL;
-            $this->updatePastGamesPage($em, $gameDomain, 1);
-            $this->indexUnindexedGames($em, $gameDomain);
+            $missingGames += $this->indexPastGamesPage($em, $gameDomain, $page);
         }
+
+        return $missingGames;
+    }
+
+    /**
+     * Retrieve all the unindexed games, and index their description and scenario
+     *
+     * @param array $gameIds An array of external gameIDs to index
+     */
+    public function indexMissingGames($gameIds = null)
+    {
+        $em = $this->app['db.orm.em'];
+
+        // Get the list of unindexed games
+        echo 'Getting undindexed games...' . PHP_EOL;
+        if (null == $gameIds) {
+            $unindexedGames = $em->getRepository('En\Entity\Game')->findByIsIndexed(false);
+        } else {
+            $unindexedGames = $em->getRepository('En\Entity\Game')->findByExtId($gameIds);
+        }
+
+        // Go over all the unindexed games and index them
+        foreach($unindexedGames as $game)
+        {
+            echo 'Indexing game #' . $game->getNum() . ' - ' . $game->getName() . PHP_EOL;
+            if ($this->indexGame($em, $game)) {
+                echo "\tGame indexed." . PHP_EOL;
+
+                $game->setIsIndexed(true);
+                $em->persist($game);
+            } else {
+                echo "\tIndexing failed." . PHP_EOL;
+            }
+        }
+
+        // Persist the data
+        $em->flush();
     }
 
     /**
@@ -43,7 +81,7 @@ class Indexer
      * @Todo Add proper unit testing
      * @Todo Refactor into En\Games\GameList
      */
-    protected function updatePastGamesPage(EntityManager $em, GameDomain $gameDomain, $page = 1)
+    protected function indexPastGamesPage(EntityManager $em, GameDomain $gameDomain, $page = 1)
     {
         // Get the past games page
         echo 'Crawling the past games page ' . $page . '...' . PHP_EOL;
@@ -66,7 +104,7 @@ class Indexer
         $missingGames = array_diff_key(array_flip($extIds), $localGameList);
 
         if (empty($missingGames)) {
-            return;
+            return $missingGames;
         }
 
         // Generate the actual entities
@@ -80,43 +118,21 @@ class Indexer
         }
 
         $em->flush();
+        return $missingGames;
     }
 
     /**
+     * Index a specific game, by GameEntity
+     *
      * @param \Doctrine\ORM\EntityManager $em
-     * @param \En\Entity\GameDomain $gameDomain
-     */
-    protected function indexUnindexedGames(EntityManager $em, GameDomain $gameDomain)
-    {
-        // Get the list of unindexed games
-        echo 'Getting undindexed games...' . PHP_EOL;
-        $unindexedGames = $em->getRepository('En\Entity\Game')->findByIsIndexed(false);
-
-        // Go over all the unindexed games and index them
-        foreach($unindexedGames as $game)
-        {
-            echo 'Indexing game #' . $game->getNum() . ' - ' . $game->getName() . PHP_EOL;
-            if ($this->indexGame($em, $gameDomain, $game)) {
-                echo "\tGame indexed." . PHP_EOL;
-
-                $game->setIsIndexed(true);
-                $em->persist($game);
-            } else {
-                echo "\tIndexing failed." . PHP_EOL;
-            }
-        }
-
-        // Persist the data
-        $em->flush();
-    }
-
-    /**
-     * @param \Doctrine\ORM\EntityManager $em
-     * @param \En\Entity\GameDomain $gameDomain
      * @param \En\Entity\Game $game
+     * @return Boolean Success?
      */
-    protected function indexGame(EntityManager $em, GameDomain $gameDomain, Game $game)
+    protected function indexGame(EntityManager $em, Game $game)
     {
+        // Get the domain that the game was run on
+        $gameDomain = $game->getDomain();
+
         // First, get the "From Author" text, and index that
         echo 'Indexing game description...' . PHP_EOL;
         $crawler = new Crawler\GameDetails($gameDomain->getName(), $game->getExtId());

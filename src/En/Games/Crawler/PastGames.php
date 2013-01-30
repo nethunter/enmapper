@@ -13,6 +13,10 @@ class PastGames extends CrawlerAbstract
     {
         $this->domain = $domain;
         $this->page = $page;
+
+        if ($page > 1) {
+            $this->url .= '?page=' . $page;
+        }
     }
         
     public function getData()
