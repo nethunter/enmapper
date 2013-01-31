@@ -90,7 +90,7 @@ if (isset($app['assetic.enabled']) && $app['assetic.enabled']) {
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 
 $app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
-    'db.orm.proxies_dir' => __DIR__ . '/cache/doctrine/proxy',
+    'db.orm.proxies_dir' => __DIR__ . '/../resources/cache/doctrine/proxy',
     'db.orm.proxies_namespace' => 'DoctrineProxy',
     'db.orm.cache' => 
         !$app['debug'] && extension_loaded('apc') ? new ApcCache() : new ArrayCache(),
