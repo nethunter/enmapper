@@ -1,6 +1,50 @@
 {
-    "hash": "8350e31af8077a78e2b61f6da83ad4c3",
+    "hash": "dd4b12f09ea6238a1c88aa9c2670e411",
     "packages": [
+        {
+            "name": "Treffynnon/Navigator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/treffynnon/Navigator",
+                "reference": "13c48df6c656aaef95289225e14c732031074aff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/treffynnon/Navigator/archive/13c48df6c656aaef95289225e14c732031074aff.zip",
+                "reference": "13c48df6c656aaef95289225e14c732031074aff",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "time": "2013-01-29 15:48:20",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Treffynnon\\Navigator": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Holywell",
+                    "email": "treffynnon@php.net",
+                    "homepage": "http://simonholywell.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Geographic calculations for PHP",
+            "homepage": "http://github.com/treffynnon/Navigator",
+            "keywords": [
+                "distance",
+                "geography",
+                "navigaton"
+            ]
+        },
         {
             "name": "doctrine/common",
             "version": "2.3.x-dev",
@@ -448,22 +492,22 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.5.3",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect",
-                "reference": "2.5.3"
+                "reference": "2.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/serbanghita/Mobile-Detect/archive/2.5.3.zip",
-                "reference": "2.5.3",
+                "url": "https://github.com/serbanghita/Mobile-Detect/archive/2.5.4.zip",
+                "reference": "2.5.4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.0.0"
             },
-            "time": "2013-01-06 01:55:23",
+            "time": "2013-01-23 22:01:05",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -634,12 +678,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Silex.git",
-                "reference": "ca7e2dc4a5e2925e21e29895eb64714e675570dd"
+                "reference": "a23c221e609a17dfc2923066e1680149b7678cf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Silex/archive/ca7e2dc4a5e2925e21e29895eb64714e675570dd.zip",
-                "reference": "ca7e2dc4a5e2925e21e29895eb64714e675570dd",
+                "url": "https://github.com/fabpot/Silex/archive/a23c221e609a17dfc2923066e1680149b7678cf9.zip",
+                "reference": "a23c221e609a17dfc2923066e1680149b7678cf9",
                 "shasum": ""
             },
             "require": {
@@ -651,7 +695,6 @@
                 "symfony/routing": ">=2.1,<2.3-dev"
             },
             "require-dev": {
-                "monolog/monolog": ">=1.0.0,<1.2-dev",
                 "twig/twig": ">=1.8.0,<2.0-dev",
                 "swiftmailer/swiftmailer": "4.2.*",
                 "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
@@ -667,14 +710,16 @@
                 "symfony/translation": ">=2.1,<2.3-dev",
                 "symfony/twig-bridge": ">=2.1,<2.3-dev",
                 "symfony/validator": ">=2.1,<2.3-dev",
-                "symfony/serializer": ">=2.1,<2.3-dev"
+                "symfony/serializer": ">=2.1,<2.3-dev",
+                "symfony/dom-crawler": ">=2.1,<2.3-dev",
+                "symfony/options-resolver": ">=2.1,<2.3-dev"
             },
             "suggest": {
                 "symfony/browser-kit": ">=2.1,<2.3-dev",
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2013-01-20 08:24:37",
+            "time": "2013-01-25 06:59:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1082,18 +1127,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation",
-                "reference": "v2.1.7"
+                "reference": "86a9fb3d4b64d5e6ef198b0aba1b979e3d34766e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/HttpFoundation/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/86a9fb3d4b64d5e6ef198b0aba1b979e3d34766e",
+                "reference": "86a9fb3d4b64d5e6ef198b0aba1b979e3d34766e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-11 00:31:43",
+            "time": "2013-01-30 21:06:00",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1279,12 +1324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process",
-                "reference": "dace2b9abb058b8d40452f8ab4532db8e4d273db"
+                "reference": "v2.2.0-BETA2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Process/archive/dace2b9abb058b8d40452f8ab4532db8e4d273db.zip",
-                "reference": "dace2b9abb058b8d40452f8ab4532db8e4d273db",
+                "url": "https://github.com/symfony/Process/archive/v2.2.0-BETA2.zip",
+                "reference": "v2.2.0-BETA2",
                 "shasum": ""
             },
             "require": {
@@ -1326,12 +1371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing",
-                "reference": "9ce05861fd9aa6cbb14759a78ab30d07afcf489f"
+                "reference": "de9d64780254f45cfa9d9e49602d0a63acf45f75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Routing/archive/9ce05861fd9aa6cbb14759a78ab30d07afcf489f.zip",
-                "reference": "9ce05861fd9aa6cbb14759a78ab30d07afcf489f",
+                "url": "https://github.com/symfony/Routing/archive/de9d64780254f45cfa9d9e49602d0a63acf45f75.zip",
+                "reference": "de9d64780254f45cfa9d9e49602d0a63acf45f75",
                 "shasum": ""
             },
             "require": {
@@ -1349,7 +1394,7 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-01-17 15:25:59",
+            "time": "2013-01-28 09:55:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1546,18 +1591,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "v2.1.7"
+                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://github.com/symfony/Yaml/archive/882b70fb7072e3f1fa95d249fd527a4e3998dc1a.zip",
+                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 21:21:51",
+            "time": "2013-01-27 16:12:43",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1648,18 +1693,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "93c6a8dedc46c73ccdd61342de3d5e761e4412f6"
+                "reference": "eaadcca54b888db779a355e449a16dd8c7760e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/93c6a8dedc46c73ccdd61342de3d5e761e4412f6.zip",
-                "reference": "93c6a8dedc46c73ccdd61342de3d5e761e4412f6",
+                "url": "https://github.com/fabpot/Twig/archive/eaadcca54b888db779a355e449a16dd8c7760e11.zip",
+                "reference": "eaadcca54b888db779a355e449a16dd8c7760e11",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-18 09:58:04",
+            "time": "2013-01-27 16:32:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1727,6 +1772,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "silex/silex": 20,
-        "mheap/silex-assetic": 20
+        "mheap/silex-assetic": 20,
+        "treffynnon/navigator": 20
     }
 }

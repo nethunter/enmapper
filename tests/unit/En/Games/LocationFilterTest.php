@@ -56,8 +56,9 @@ class LocationFilterTest extends \PHPUnit_Framework_TestCase
         ), $coordinates);
     }
 
-    public function testMatchDMSCoordinates()
+    public function testMatchDMSNewLineCoordinates()
     {
+        $this->markTestIncomplete('Not implemented yet');
         $text = "Sample text with coordinates: 32° 05' 37\" N\n34° 50' 49\" E nuff said.";
 
         $filter = new LocationFilter($text);
@@ -71,6 +72,16 @@ class LocationFilterTest extends \PHPUnit_Framework_TestCase
     public function testVerifyDatesArentMatched()
     {
         $text = "Game begins on the 19.08.2011, at 10:00 in Jerusalem";
+
+        $filter = new LocationFilter($text);
+        $coordinates = $filter->getCoordinates();
+
+        $this->assertEquals(array(), $coordinates);
+    }
+
+    public function testRandomNumbersArentMatched()
+    {
+        $text = "Please verify the following numbers: 2.41 12.7 4.25 0.07 0.07 7.51 it should be fun";
 
         $filter = new LocationFilter($text);
         $coordinates = $filter->getCoordinates();

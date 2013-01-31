@@ -21,9 +21,17 @@ class LocationFilter
      */
     public function matchDMSCoordinates($text)
     {
+        // $pattern = '/[0-9]{1,2}[:|°|º][0-9]{1,2}[:|\'](?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b)"?[N|S|E|W]/';
+        return array();
+
+
         $coordinates = array();
-        $matched = preg_match_all('/[0-9]{1,2}[:|°|º][0-9]{1,2}[:|\'](?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b)"?[N|S|E|W]/',
-            $text, $matches);
+        $matched = preg_match_all($pattern, $text, $matches);
+
+
+        if ($matched) {
+            print_r($matches);
+        }
 
         return $coordinates;
     }
@@ -43,14 +51,16 @@ class LocationFilter
 
     public function matchDecDegCoordinates($text)
     {
-        $matched = preg_match_all('/(\-?\d+(\.\d+))[,\s]+\s*?(\-?\d+(\.\d+))/', $text, $matches);
+        $pattern = "/([-]?[0-9]{1,2}.[0-9]{3,6})[,\s]+([-]?[0-9]{1,3}.[0-9]{3,6})/";
+
+        $matched = preg_match_all($pattern, $text, $matches);
         $coordinates = array();
 
         if ($matched) {
-            while ($matches[1] && $matches[3]) {
+            while ($matches[1] && $matches[2]) {
                 $coordinates[] = array(
                     array_shift($matches[1]),
-                    array_shift($matches[3])
+                    array_shift($matches[2])
                 );
             }
         }
