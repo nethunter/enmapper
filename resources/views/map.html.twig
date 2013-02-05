@@ -6,7 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    {{ form }}
+    <div class="map-form-widget">
+        {{ form_widget(form) }}
+    </div>
     {{ map.js|raw }}
     {{ map.body|raw }}
 {% endblock %}

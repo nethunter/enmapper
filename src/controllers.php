@@ -11,7 +11,40 @@ $app->match('/', function() use ($app) {
 })->bind('homepage');
 
 $app->match('/map', function() use ($app) {
-    $locations = $app['db.orm.em']->getRepository('En\Entity\Location')->findAllAvailableLocations();
+    $em = $app['db.orm.em'];
+
+    $locations = $em->getRepository('En\Entity\Location')->findAllAvailableLocations();
+
+    // Get all domains
+    $gameDomains = $em->getRepository('En\Entity\GameDomain')->findAll();
+    $gameDomainNames = array("All");
+    foreach($gameDomains as $gameDomain) {
+        $gameDomainNames[] = $gameDomain->getName();
+    }
+
+    // Get all games
+    // Get all domains
+    $games = $em->getRepository('En\Entity\Game')->findAll();
+    $gameNames = array("All");
+    foreach($games as $game) {
+        $gameNames[] = $game;
+    }
+
+    $formData = array(
+        'game_doamain' => 'Game domain',
+        'game' => 'Game'
+    );
+
+    $form = $app['form.factory']->createBuilder('form', $formData)
+        ->add('game_domain', 'choice', array(
+            'choices' => $gameDomainNames,
+            'expanded' => false
+        ))
+        ->add('game', 'choice', array(
+            'choices' => $gameNames,
+            'expanded' => false
+        ))
+    ->getForm();
 
     $mapGenerator = new \En\Games\MapGenerator();
     $mapGenerator->generateMapFromLocations($locations);
@@ -23,7 +56,7 @@ $app->match('/map', function() use ($app) {
             'js' => $map->getMapJS(),
             'body' => $map->getMap()
         ),
-        'form' => ''
+        'form' => $form->createView()
     ));
 })->bind('map');
 

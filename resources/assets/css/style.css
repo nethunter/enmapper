@@ -10,4 +10,9 @@ body {
 
 #map label { 
   width: auto; display:inline; 
-} 
+}
+
+.map-form-widget .control-group {
+    width: 230px;
+    float: left;
+}
