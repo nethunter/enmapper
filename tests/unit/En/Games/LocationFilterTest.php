@@ -56,6 +56,18 @@ class LocationFilterTest extends \PHPUnit_Framework_TestCase
         ), $coordinates);
     }
 
+    public function testGetLocationsFromLongCoordinates()
+    {
+        $text = "To Bristol, my friends at 32.5154779, 34.9488387";
+
+        $filter = new LocationFilter($text);
+        $coordinates = $filter->getCoordinates();
+
+        $this->assertEquals(array(
+            array(32.5154779, 34.9488387)
+        ), $coordinates);
+    }
+
     public function testMatchDMSNewLineCoordinates()
     {
         $this->markTestIncomplete('Not implemented yet');
