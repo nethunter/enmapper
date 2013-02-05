@@ -2,7 +2,7 @@
 namespace En\Entity;
 
 /**
- * @Entity @Table(name="location")
+ * @Entity(repositoryClass="En\Entity\LocationRepository") @Table(name="location")
  */
 class Location {
     /**

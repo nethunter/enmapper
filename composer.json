@@ -31,7 +31,8 @@
         "doctrine/dbal"         : "2.3.*",
         "doctrine/orm"          : "2.3.*",
         "taluu/doctrine-orm-provider" : "1.0.*",
-        "treffynnon/navigator": "dev-master"
+        "treffynnon/navigator": "dev-master",
+        "symfony/security": "2.1.*"
     },
     "require-dev": {
         "phing/phing"           : "2.4.*"

@@ -11,56 +11,19 @@ $app->match('/', function() use ($app) {
 })->bind('homepage');
 
 $app->match('/map', function() use ($app) {
-    $map = new \PHPGoogleMaps\Map;
+    $locations = $app['db.orm.em']->getRepository('En\Entity\Location')->findAllAvailableLocations();
 
-    $em = $app['db.orm.em'];
-
-    $dql = 'SELECT l, gl, g, gd FROM En\Entity\Location l JOIN l.level gl JOIN gl.game g JOIN g.domain gd';
-
-    $query = $app['db.orm.em']->createQuery($dql);
-    $locations = $query->getResult();
-
-    /**
-     * @var En\Entity\Location $location
-     */
-    foreach($locations as $location) {
-        $gameLevel = $location->getLevel();
-        $game = $gameLevel->getGame();
-        $domain = $game->getDomain();
-
-        $marker_options = array(
-            'title' => '#' . $game->getNum() . ' - ' . $gameLevel,
-            'content' => '<p><strong>' . $game . '</strong><br />'
-                . '<a href=' . $gameLevel->getFullLink() . ' target=\'en_level_view\'>' . $gameLevel . '</a></p>'
-        );
-
-        $lattitude = $location->getLat();
-        $longtitude = $location->getLng();
-
-        $marker = \PHPGoogleMaps\Overlay\Marker::createFromPosition(
-            new \PHPGoogleMaps\Core\LatLng($lattitude, $longtitude),
-            $marker_options
-        );
-        $map->addObject( $marker );
-    }
-    
-    $map->setWidth('940px');
-    $map->setHeight('800px');
-    
-    $map->enableStreetView();
-    // Set cluster options
-    $cluster_options = array(
-        'maxZoom' => 10,
-        'gridSize' => null
-    );
-    $map->enableClustering( 'js/libs/markerclusterer_compiled.js', $cluster_options );
+    $mapGenerator = new \En\Games\MapGenerator();
+    $mapGenerator->generateMapFromLocations($locations);
+    $map = $mapGenerator->getMap();
 
     return $app['twig']->render('map.html.twig', array(
         'map' => array(
             'headerjs' => $map->getHeaderJS(),
             'js' => $map->getMapJS(),
             'body' => $map->getMap()
-        )
+        ),
+        'form' => ''
     ));
 })->bind('map');
 
