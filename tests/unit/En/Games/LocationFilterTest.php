@@ -101,6 +101,17 @@ class LocationFilterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(), $coordinates);
     }
 
+    public function testRandomNumbersWithoutDots()
+    {
+        $text = "Some locations are here 72 97 105 102 97 44 32 66 101 110 45 71 117 114 105 111"
+            . " 110 32 115 116 46 32 35 49 48";
+
+        $filter = new LocationFilter($text);
+        $coordinates = $filter->getCoordinates();
+
+        $this->assertEquals(array(), $coordinates);
+    }
+
     public function testHandlePartialMatchesGracefully()
     {
         $text = "Don't fall on partial coordinates: 31.921452";

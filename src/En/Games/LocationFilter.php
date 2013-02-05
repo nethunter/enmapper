@@ -51,7 +51,7 @@ class LocationFilter
 
     public function matchDecDegCoordinates($text)
     {
-        $pattern = "/([-]?[0-9]{1,2}.[0-9]{3,7})[,\s]+([-]?[0-9]{1,3}.[0-9]{3,7})/";
+        $pattern = "/([-]?[0-9]{1,2}\.[0-9]{3,7})[,\s]+([-]?[0-9]{1,3}\.[0-9]{3,7})/";
 
         $matched = preg_match_all($pattern, $text, $matches);
         $coordinates = array();
