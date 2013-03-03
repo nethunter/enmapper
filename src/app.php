@@ -95,6 +95,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'pattern' => '^/admin',
             'http' => true,
             'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+            'logout' => array('logout_path' => '/admin/logout'),
             'users' => array(
                 'admin' => array(
                     'ROLE_ADMIN',
@@ -117,5 +118,14 @@ $app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
         'namespace' => 'En\Entity',
     )),
 ));
+
+$app['admin_navigation'] = $app->share(function() use ($app) {
+    $em = $app['db.orm.em'];
+    
+    return array(
+        'domain_count' => 1,
+        'location_count' => 500
+    );
+});
 
 return $app;

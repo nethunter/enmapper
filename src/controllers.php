@@ -68,8 +68,16 @@ $app->get('/login', function(Request $request) use ($app) {
 })->bind('login');
 
 $app->get('/admin', function() use ($app) {
-
+    return $app['twig']->render('admin/index.html.twig');
 })->bind('admin');
+
+$app->get('/admin/domains', function() use ($app) {
+    return $app['twig']->render('admin/domains.html.twig');
+})->bind('admin_domains');
+
+$app->get('/admin/locations', function() use ($app) {
+    return $app['twig']->render('admin/locations.html.twig');
+})->bind('admin_locations');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {

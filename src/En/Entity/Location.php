@@ -26,6 +26,11 @@ class Location {
     protected $lat;
 
     /**
+     * @Column(type="boolean")
+     */
+    protected $visible = true;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -79,6 +84,23 @@ class Location {
     public function getLat()
     {
         return $this->lat;
+    }
+
+    /**
+     * Set whatever this location should be visible on the map.
+     *
+     * @param $visible
+     * @return Location
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+        return $this;
+    }
+
+    public function getVisible()
+    {
+        return $this->visible;
     }
 
     /**

@@ -12,4 +12,12 @@ class LocationRepository extends EntityRepository
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->getResult();
     }
+
+    public function getLocationCount()
+    {
+        $dql = 'SELECT COUNT(1) FROM En\Entity\Location';
+
+        $query = $this->getEntityManager()->createQuery();
+        return $query->getSingleScalarResult();
+    }
 }

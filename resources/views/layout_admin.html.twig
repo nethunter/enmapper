@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'Admin' %}
+
+{% block content %}
+<H1>Welcome to the Admin panel</H1>
+    <div class="row">
+        <div class="sidebar-nav span3">
+            {% include 'admin/navigation.html.twig' %}
+        </div>
+
+        <div class="span9">
+            {% block admin_content %}
+                <h1>Welcome to the Admin Panel!</h1>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

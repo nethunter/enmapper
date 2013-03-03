@@ -32,7 +32,8 @@
         "doctrine/orm"          : "2.3.*",
         "taluu/doctrine-orm-provider" : "1.0.*",
         "treffynnon/navigator": "dev-master",
-        "symfony/security": "2.1.*"
+        "symfony/security": "2.1.*",
+        "dreamfactory/charisma": "dev-master"
     },
     "require-dev": {
         "phing/phing"           : "2.4.*"

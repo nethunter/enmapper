@@ -1,5 +1,5 @@
 {
-    "hash": "6aa976fa2eec27543ee863fab986128d",
+    "hash": "ad8654b7c8192a0925ec910263f04da2",
     "packages": [
         {
             "name": "Treffynnon/Navigator",
@@ -18,7 +18,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2013-01-29 15:48:20",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -43,7 +42,8 @@
                 "distance",
                 "geography",
                 "navigaton"
-            ]
+            ],
+            "time": "2013-01-29 15:48:20"
         },
         {
             "name": "doctrine/common",
@@ -62,7 +62,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-09-20 05:55:18",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -107,12 +106,13 @@
             "description": "Common Library for Doctrine projects",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
                 "annotations",
-                "persistence"
-            ]
+                "collections",
+                "eventmanager",
+                "persistence",
+                "spl"
+            ],
+            "time": "2012-09-20 05:55:18"
         },
         {
             "name": "doctrine/dbal",
@@ -129,10 +129,9 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": "2.3.*"
+                "doctrine/common": "2.3.*",
+                "php": ">=5.3.2"
             },
-            "time": "2013-01-20 11:50:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -172,10 +171,11 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database",
-                "persistence",
                 "dbal",
+                "persistence",
                 "queryobject"
-            ]
+            ],
+            "time": "2013-01-20 11:50:36"
         },
         {
             "name": "doctrine/orm",
@@ -192,15 +192,14 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
+                "doctrine/dbal": "2.3.*",
                 "ext-pdo": "*",
-                "symfony/console": "2.*",
-                "doctrine/dbal": "2.3.*"
+                "php": ">=5.3.2",
+                "symfony/console": "2.*"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2013-01-20 19:35:21",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -245,7 +244,51 @@
             "keywords": [
                 "database",
                 "orm"
-            ]
+            ],
+            "time": "2013-01-20 19:35:21"
+        },
+        {
+            "name": "dreamfactory/charisma",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/dreamfactory/charisma.git",
+                "reference": "baa280991f93844c4d165ac74108819bb415ff7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/dreamfactory/charisma/get/baa280991f93844c4d165ac74108819bb415ff7c.zip",
+                "reference": "baa280991f93844c4d165ac74108819bb415ff7c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Usman",
+                    "email": "hi@usman.it"
+                },
+                {
+                    "name": "Jerry Ablan",
+                    "email": "jerryablan@dreamfactory.com"
+                }
+            ],
+            "description": "free, premium quality, responsive, multiple skin admin template.",
+            "homepage": "https://github.com/usmanhalalit/charisma",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "css framework",
+                "html",
+                "twitter bootstrap"
+            ],
+            "time": "2013-02-11 17:40:31"
         },
         {
             "name": "fabpot/goutte",
@@ -262,16 +305,15 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
                 "ext-curl": "*",
                 "guzzle/guzzle": "3.0.*",
+                "php": ">=5.3.0",
                 "symfony/browser-kit": ">=2.1, <2.3-dev",
                 "symfony/css-selector": ">=2.1, <2.3-dev",
                 "symfony/dom-crawler": ">=2.1, <2.3-dev",
                 "symfony/finder": ">=2.1, <2.3-dev",
                 "symfony/process": ">=2.1, <2.3-dev"
             },
-            "time": "2013-01-04 16:53:28",
             "type": "application",
             "extra": {
                 "branch-alias": {
@@ -297,7 +339,8 @@
             "homepage": "https://github.com/fabpot/Goutte",
             "keywords": [
                 "scraper"
-            ]
+            ],
+            "time": "2013-01-04 16:53:28"
         },
         {
             "name": "guzzle/guzzle",
@@ -314,8 +357,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
                 "ext-curl": "*",
+                "php": ">=5.3.2",
                 "symfony/event-dispatcher": ">=2.1"
             },
             "replace": {
@@ -343,15 +386,14 @@
             },
             "require-dev": {
                 "doctrine/common": "*",
-                "symfony/class-loader": "*",
                 "monolog/monolog": "1.*",
-                "zendframework/zend-cache": "2.0.*",
-                "zendframework/zend-log": "2.0.*",
-                "zend/zend-log1": "1.12",
+                "phpunit/phpunit": "3.7.*",
+                "symfony/class-loader": "*",
                 "zend/zend-cache1": "1.12",
-                "phpunit/phpunit": "3.7.*"
+                "zend/zend-log1": "1.12",
+                "zendframework/zend-cache": "2.0.*",
+                "zendframework/zend-log": "2.0.*"
             },
-            "time": "2012-12-19 23:06:35",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -382,14 +424,15 @@
             "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "framework",
-                "curl",
-                "http",
-                "rest",
-                "http client",
                 "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
                 "web service"
-            ]
+            ],
+            "time": "2012-12-19 23:06:35"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -408,7 +451,6 @@
             "require": {
                 "php": ">=5.3.1"
             },
-            "time": "2012-09-19 17:17:54",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -432,7 +474,8 @@
                 "assets",
                 "compression",
                 "minification"
-            ]
+            ],
+            "time": "2012-09-19 17:17:54"
         },
         {
             "name": "mheap/silex-assetic",
@@ -449,8 +492,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
                 "kriswallsmith/assetic": ">=1.0",
+                "php": ">=5.3.0",
                 "symfony/finder": "2.1.*"
             },
             "require-dev": {
@@ -460,7 +503,6 @@
             "suggest": {
                 "twig/twig": ">=1.2.0"
             },
-            "time": "2012-12-25 13:59:45",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -486,9 +528,10 @@
             "description": "Assetic extension for Silex",
             "homepage": "https://github.com/mheap/Silex-Assetic",
             "keywords": [
-                "silex",
-                "assetic"
-            ]
+                "assetic",
+                "silex"
+            ],
+            "time": "2012-12-25 13:59:45"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -507,7 +550,6 @@
             "require": {
                 "php": ">=5.0.0"
             },
-            "time": "2013-01-23 22:01:05",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -529,12 +571,13 @@
             "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
             "homepage": "https://github.com/serbanghita/Mobile-Detect",
             "keywords": [
+                "detect mobile devices",
                 "mobile",
                 "mobile detect",
                 "mobile detector",
-                "php mobile detect",
-                "detect mobile devices"
-            ]
+                "php mobile detect"
+            ],
+            "time": "2013-01-23 22:01:05"
         },
         {
             "name": "monolog/monolog",
@@ -553,7 +596,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2011-10-24 02:39:02",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -577,7 +619,8 @@
             "keywords": [
                 "log",
                 "logging"
-            ]
+            ],
+            "time": "2011-10-24 02:39:02"
         },
         {
             "name": "php-google-maps/php-google-maps",
@@ -597,7 +640,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-10-14 20:05:21",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -619,12 +661,13 @@
             "description": "PHP Google Maps API for PHP 5.3+",
             "homepage": "https://github.com/galen/PHPGoogleMaps",
             "keywords": [
+                "google",
+                "google maps",
                 "google-maps",
                 "map",
-                "google",
-                "maps",
-                "google maps"
-            ]
+                "maps"
+            ],
+            "time": "2012-10-14 20:05:21"
         },
         {
             "name": "pimple/pimple",
@@ -643,7 +686,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2013-01-07 10:39:26",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -668,9 +710,10 @@
             "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
             "homepage": "http://pimple.sensiolabs.org",
             "keywords": [
-                "dependency injection",
-                "container"
-            ]
+                "container",
+                "dependency injection"
+            ],
+            "time": "2013-01-07 10:39:26"
         },
         {
             "name": "silex/silex",
@@ -695,31 +738,30 @@
                 "symfony/routing": ">=2.1,<2.3-dev"
             },
             "require-dev": {
-                "twig/twig": ">=1.8.0,<2.0-dev",
-                "swiftmailer/swiftmailer": "4.2.*",
                 "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
-                "symfony/security": ">=2.1,<2.3-dev",
-                "symfony/config": ">=2.1,<2.3-dev",
-                "symfony/locale": ">=2.1,<2.3-dev",
-                "symfony/form": ">=2.1,<2.3-dev",
+                "swiftmailer/swiftmailer": "4.2.*",
                 "symfony/browser-kit": ">=2.1,<2.3-dev",
+                "symfony/config": ">=2.1,<2.3-dev",
                 "symfony/css-selector": ">=2.1,<2.3-dev",
+                "symfony/dom-crawler": ">=2.1,<2.3-dev",
                 "symfony/finder": ">=2.1,<2.3-dev",
+                "symfony/form": ">=2.1,<2.3-dev",
+                "symfony/locale": ">=2.1,<2.3-dev",
                 "symfony/monolog-bridge": ">=2.1,<2.3-dev",
+                "symfony/options-resolver": ">=2.1,<2.3-dev",
                 "symfony/process": ">=2.1,<2.3-dev",
+                "symfony/security": ">=2.1,<2.3-dev",
+                "symfony/serializer": ">=2.1,<2.3-dev",
                 "symfony/translation": ">=2.1,<2.3-dev",
                 "symfony/twig-bridge": ">=2.1,<2.3-dev",
                 "symfony/validator": ">=2.1,<2.3-dev",
-                "symfony/serializer": ">=2.1,<2.3-dev",
-                "symfony/dom-crawler": ">=2.1,<2.3-dev",
-                "symfony/options-resolver": ">=2.1,<2.3-dev"
+                "twig/twig": ">=1.8.0,<2.0-dev"
             },
             "suggest": {
                 "symfony/browser-kit": ">=2.1,<2.3-dev",
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2013-01-25 06:59:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -750,7 +792,8 @@
             "homepage": "http://silex.sensiolabs.org",
             "keywords": [
                 "microframework"
-            ]
+            ],
+            "time": "2013-01-25 06:59:19"
         },
         {
             "name": "symfony/browser-kit",
@@ -772,13 +815,12 @@
                 "symfony/dom-crawler": "2.1.*"
             },
             "require-dev": {
-                "symfony/process": "2.1.*",
-                "symfony/css-selector": "2.1.*"
+                "symfony/css-selector": "2.1.*",
+                "symfony/process": "2.1.*"
             },
             "suggest": {
                 "symfony/process": "2.1.*"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -800,7 +842,8 @@
                 }
             ],
             "description": "Symfony BrowserKit Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/config",
@@ -820,7 +863,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -842,7 +884,8 @@
                 }
             ],
             "description": "Symfony Config Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/console",
@@ -862,7 +905,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 15:20:05",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -884,7 +926,8 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:20:05"
         },
         {
             "name": "symfony/css-selector",
@@ -904,7 +947,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -926,7 +968,8 @@
                 }
             ],
             "description": "Symfony CssSelector Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/dom-crawler",
@@ -952,7 +995,6 @@
             "suggest": {
                 "symfony/css-selector": "2.1.*"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -974,7 +1016,8 @@
                 }
             ],
             "description": "Symfony DomCrawler Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1001,7 +1044,6 @@
                 "symfony/dependency-injection": "2.1.*",
                 "symfony/http-kernel": "2.1.*"
             },
-            "time": "2013-01-11 00:31:43",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1023,7 +1065,8 @@
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-11 00:31:43"
         },
         {
             "name": "symfony/finder",
@@ -1043,7 +1086,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1065,7 +1107,8 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/form",
@@ -1089,14 +1132,13 @@
                 "symfony/options-resolver": "2.1.*"
             },
             "require-dev": {
-                "symfony/validator": "2.1.*",
-                "symfony/http-foundation": "2.1.*"
+                "symfony/http-foundation": "2.1.*",
+                "symfony/validator": "2.1.*"
             },
             "suggest": {
-                "symfony/validator": "2.1.*",
-                "symfony/http-foundation": "2.1.*"
+                "symfony/http-foundation": "2.1.*",
+                "symfony/validator": "2.1.*"
             },
-            "time": "2013-01-11 13:37:17",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1118,7 +1160,8 @@
                 }
             ],
             "description": "Symfony Form Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-11 13:37:17"
         },
         {
             "name": "symfony/http-foundation",
@@ -1138,7 +1181,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-30 21:06:00",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1161,7 +1203,8 @@
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-30 21:06:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -1201,7 +1244,6 @@
                 "symfony/dependency-injection": "2.1.*",
                 "symfony/finder": "2.1.*"
             },
-            "time": "2013-01-17 23:11:33",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1223,7 +1265,8 @@
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 23:11:33"
         },
         {
             "name": "symfony/locale",
@@ -1246,7 +1289,6 @@
             "suggest": {
                 "ext-intl": ">=5.3.3"
             },
-            "time": "2013-01-10 04:41:59",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1268,7 +1310,8 @@
                 }
             ],
             "description": "Symfony Locale Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-10 04:41:59"
         },
         {
             "name": "symfony/options-resolver",
@@ -1288,7 +1331,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1312,10 +1354,11 @@
             "description": "Symfony OptionsResolver Component",
             "homepage": "http://symfony.com",
             "keywords": [
-                "configuration",
                 "config",
+                "configuration",
                 "options"
-            ]
+            ],
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/process",
@@ -1335,7 +1378,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 15:25:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1362,7 +1404,8 @@
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:25:59"
         },
         {
             "name": "symfony/routing",
@@ -1384,17 +1427,16 @@
             },
             "require-dev": {
                 "doctrine/common": ">=2.2,<2.4-dev",
+                "psr/log": ">=1.0,<2.0",
                 "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*",
                 "symfony/http-kernel": "2.2.*",
-                "psr/log": ">=1.0,<2.0"
+                "symfony/yaml": "2.2.*"
             },
             "suggest": {
                 "doctrine/common": ">=2.2,<2.4-dev",
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-01-28 09:55:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1421,7 +1463,8 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-28 09:55:07"
         },
         {
             "name": "symfony/security",
@@ -1445,21 +1488,20 @@
                 "symfony/http-kernel": "2.1.*"
             },
             "require-dev": {
+                "doctrine/common": ">=2.2,<2.4-dev",
+                "doctrine/dbal": ">=2.2,<2.4-dev",
                 "symfony/form": "2.1.*",
                 "symfony/routing": "2.1.*",
-                "symfony/validator": "2.1.*",
-                "doctrine/common": ">=2.2,<2.4-dev",
-                "doctrine/dbal": ">=2.2,<2.4-dev"
+                "symfony/validator": "2.1.*"
             },
             "suggest": {
                 "doctrine/dbal": "to use the built-in ACL implementation",
                 "symfony/class-loader": "2.1.*",
                 "symfony/finder": "2.1.*",
                 "symfony/form": "2.1.*",
-                "symfony/validator": "2.1.*",
-                "symfony/routing": "2.1.*"
+                "symfony/routing": "2.1.*",
+                "symfony/validator": "2.1.*"
             },
-            "time": "2013-02-01 21:52:20",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1481,7 +1523,8 @@
                 }
             ],
             "description": "Symfony Security Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-01 21:52:20"
         },
         {
             "name": "symfony/translation",
@@ -1509,7 +1552,6 @@
                 "symfony/config": "2.1.*",
                 "symfony/yaml": "2.1.*"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1531,7 +1573,8 @@
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-09 08:51:07"
         },
         {
             "name": "symfony/twig-bridge",
@@ -1555,20 +1598,19 @@
             "require-dev": {
                 "symfony/form": "2.1.*",
                 "symfony/routing": "2.1.*",
+                "symfony/security": "2.1.*",
                 "symfony/templating": "2.1.*",
                 "symfony/translation": "2.1.*",
-                "symfony/yaml": "2.1.*",
-                "symfony/security": "2.1.*"
+                "symfony/yaml": "2.1.*"
             },
             "suggest": {
                 "symfony/form": "2.1.*",
                 "symfony/routing": "2.1.*",
+                "symfony/security": "2.1.*",
                 "symfony/templating": "2.1.*",
                 "symfony/translation": "2.1.*",
-                "symfony/yaml": "2.1.*",
-                "symfony/security": "2.1.*"
+                "symfony/yaml": "2.1.*"
             },
-            "time": "2013-01-17 15:20:05",
             "type": "symfony-bridge",
             "autoload": {
                 "psr-0": {
@@ -1590,7 +1632,8 @@
                 }
             ],
             "description": "Symfony Twig Bridge",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:20:05"
         },
         {
             "name": "symfony/validator",
@@ -1620,7 +1663,6 @@
                 "symfony/http-foundation": "2.1.*",
                 "symfony/yaml": "2.1.*"
             },
-            "time": "2013-01-11 00:31:43",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1642,7 +1684,8 @@
                 }
             ],
             "description": "Symfony Validator Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-11 00:31:43"
         },
         {
             "name": "symfony/yaml",
@@ -1662,7 +1705,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-27 16:12:43",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1684,7 +1726,8 @@
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-27 16:12:43"
         },
         {
             "name": "taluu/doctrine-orm-provider",
@@ -1701,16 +1744,15 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "silex/silex": "1.0.*",
-                "doctrine/orm": ">= 2.3.0, < 2.4.0-beta",
                 "doctrine/common": ">= 2.3.0, < 2.4.0-beta",
-                "doctrine/dbal": ">= 2.3.0, < 2.4.0-beta"
+                "doctrine/dbal": ">= 2.3.0, < 2.4.0-beta",
+                "doctrine/orm": ">= 2.3.0, < 2.4.0-beta",
+                "php": ">=5.3.2",
+                "silex/silex": "1.0.*"
             },
             "suggest": {
                 "symfony/console": "Necessary if you would like to use the Doctrine CLI tools"
             },
-            "time": "2012-11-09 09:46:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1739,13 +1781,14 @@
             "description": "Doctrine ORM provider for Silex",
             "homepage": "https://github.com/taluu/nutwerk-orm-extension",
             "keywords": [
-                "silex",
                 "database",
-                "orm",
                 "doctrine",
                 "extension",
-                "provider"
-            ]
+                "orm",
+                "provider",
+                "silex"
+            ],
+            "time": "2012-11-09 09:46:57"
         },
         {
             "name": "twig/twig",
@@ -1764,7 +1807,6 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-27 16:32:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1794,7 +1836,8 @@
             "homepage": "http://twig.sensiolabs.org",
             "keywords": [
                 "templating"
-            ]
+            ],
+            "time": "2013-01-27 16:32:04"
         },
         {
             "name": "twitter/bootstrap",
@@ -1811,7 +1854,6 @@
                 "reference": "v2.2.2",
                 "shasum": ""
             },
-            "time": "2012-12-08 20:57:21",
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1820,9 +1862,10 @@
             "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
             "homepage": "http://twitter.github.com/bootstrap/",
             "keywords": [
-                "css",
-                "bootstrap"
-            ]
+                "bootstrap",
+                "css"
+            ],
+            "time": "2012-12-08 20:57:21"
         }
     ],
     "packages-dev": null,
@@ -1833,6 +1876,7 @@
     "stability-flags": {
         "silex/silex": 20,
         "mheap/silex-assetic": 20,
-        "treffynnon/navigator": 20
+        "treffynnon/navigator": 20,
+        "dreamfactory/charisma": 20
     }
 }
