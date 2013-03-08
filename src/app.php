@@ -89,23 +89,6 @@ if (isset($app['assetic.enabled']) && $app['assetic.enabled']) {
 
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 
-$app->register(new Silex\Provider\SecurityServiceProvider(), array(
-    'security.firewalls' => array(
-        'admin' => array(
-            'pattern' => '^/admin',
-            'http' => true,
-            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
-            'logout' => array('logout_path' => '/admin/logout'),
-            'users' => array(
-                'admin' => array(
-                    'ROLE_ADMIN',
-                    '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='
-                )
-            )
-        )
-    )
-));
-
 $app->register(new Nutwerk\Provider\DoctrineORMServiceProvider(), array(
     'db.orm.proxies_dir' => __DIR__ . '/../resources/cache/doctrine/proxy',
     'db.orm.proxies_namespace' => 'DoctrineProxy',
@@ -123,7 +106,7 @@ $app['admin_navigation'] = $app->share(function() use ($app) {
     $em = $app['db.orm.em'];
     
     return array(
-        'domain_count' => 1,
+        'domain_count' => $em->getRepository('En\Entity\GameDomain')->count(),
         'location_count' => 500
     );
 });

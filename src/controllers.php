@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Silex\Provider\SecurityServiceProvider;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\FormError;
@@ -76,7 +77,9 @@ $app->get('/admin/domains', function() use ($app) {
 })->bind('admin_domains');
 
 $app->get('/admin/locations', function() use ($app) {
-    return $app['twig']->render('admin/locations.html.twig');
+    return $app['twig']->render('admin/locations.html.twig', array(
+
+    ));
 })->bind('admin_locations');
 
 $app->error(function (\Exception $e, $code) use ($app) {
@@ -94,5 +97,21 @@ $app->error(function (\Exception $e, $code) use ($app) {
 
     return new Response($message, $code);
 });
+
+$app->register(new SecurityServiceProvider(), array(
+    'security.firewalls' => array(
+        'admin' => array(
+            'pattern' => '^/admin',
+            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+            'logout' => array('logout_path' => '/admin/logout'),
+            'users' => array(
+                'admin' => array(
+                    'ROLE_ADMIN',
+                    '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='
+                )
+            )
+        )
+    )
+));
 
 return $app;
