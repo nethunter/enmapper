@@ -114,4 +114,13 @@ $app->register(new SecurityServiceProvider(), array(
     )
 ));
 
+$app['admin_navigation'] = $app->share(function() use ($app) {
+    $em = $app['db.orm.em'];
+
+    return array(
+        'domain_count' => $em->getRepository('En\Entity\GameDomain')->count(),
+        'location_count' => 500
+    );
+});
+
 return $app;
