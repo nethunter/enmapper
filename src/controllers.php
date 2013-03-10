@@ -76,6 +76,14 @@ $app->get('/admin/domains', function() use ($app) {
     return $app['twig']->render('admin/domains.html.twig');
 })->bind('admin_domains');
 
+$app->get('/admin/games', function() use ($app) {
+    return $app['twig']->render('admin/games.html.twig');
+})->bind('admin_games');
+
+$app->get('/admin/game_levels', function() use ($app) {
+    return $app['twig']->render('admin/game_levels.html.twig');
+})->bind('admin_gamelevels');
+
 $app->get('/admin/locations', function() use ($app) {
     return $app['twig']->render('admin/locations.html.twig', array(
 
@@ -118,8 +126,10 @@ $app['admin_navigation'] = $app->share(function() use ($app) {
     $em = $app['db.orm.em'];
 
     return array(
-        'domain_count' => $em->getRepository('En\Entity\GameDomain')->count(),
-        'location_count' => 500
+        'domain_count' => $em->getRepository('En\Entity\GameDomain')->getCount(),
+        'game_count' => $em->getRepository('En\Entity\Game')->getCount(),
+        'game_level_count' => $em->getRepository('En\Entity\GameLevel')->getCount(),
+        'location_count' => $em->getRepository('En\Entity\Location')->getCount()
     );
 });
 

@@ -8,9 +8,11 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar:///home/nethunter/Documents/Lab/enmapper/composer.phar" />
+          <root url="phar:///home/nethunter/Documents/Lab/enmapper/vendor/fabpot/goutte/goutte.phar" />
         </CLASSES>
         <SOURCES>
           <root url="phar:///home/nethunter/Documents/Lab/enmapper/composer.phar" />
+          <root url="phar:///home/nethunter/Documents/Lab/enmapper/vendor/fabpot/goutte/goutte.phar" />
         </SOURCES>
       </library>
     </orderEntry>

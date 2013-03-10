@@ -1,16 +1,31 @@
-{% set admin_navigation_bar = [
-['index', 'Dashboard'], ['domains', 'Game Domains'], ['admin', 'Admin']
-] %}
-
 <div class="well">
     <ul class="nav nav-list">
         <li class="nav-header">Admin Menu</li>
-        <li><a href="{{ path('admin') }}"><i class="icon-home"></i> Dashboard</a></li>
-        <li><a href="{{ path('admin_domains') }}"><i class="icon-globe"></i> Game Domains <span class="badge
-                    badge-info">{{ app.admin_navigation.domain_count }}</span></a></li>
-        <li><a href="{{ path('admin_locations') }}"><i class="icon-map-marker"></i> Locations <span class="badge
-        badge-info">{{ app.admin_navigation.location_count }}</span></a></li>
+        <li {% if admin_active=='dashboard' %}class="active"{% endif %}>
+            <a href="{{ path('admin') }}"><i
+                class="icon-home"></i>
+            Dashboard</a>
+        </li>
+        <li {% if admin_active=='domains' %}class="active"{% endif %}>
+            <a href="{{ path('admin_domains') }}"><i class="icon-globe"></i> Game Domains <span class="badge
+                    badge-info">{{ app.admin_navigation.domain_count }}</span></a>
+        </li>
+        <li {% if admin_active=='games' %}class="active"{% endif %}>
+            <a href="{{ path('admin_games') }}"><i class="icon-th-large"></i> Games <span class="badge
+                    badge-info">{{ app.admin_navigation.game_count }}</span></a>
+        </li>
+        <li {% if admin_active=='levels' %}class="active"{% endif %}>
+            <a href="{{ path('admin_gamelevels') }}"><i class="icon-th"></i> Game Levels <span
+                class="badge
+                    badge-info">{{ app.admin_navigation.game_level_count }}</span></a>
+        </li>
+        <li {% if admin_active=='locations' %}class="active"{% endif %}>
+            <a href="{{ path('admin_locations') }}"><i class="icon-map-marker"></i> Locations <span class="badge
+        badge-info">{{ app.admin_navigation.location_count }}</span></a>
+        </li>
         <li class="divider"></li>
-        <li><a href="{{ path('admin_logout') }}"><i class="icon-share"></i> Logout</a></li>
+        <li>
+            <a href="{{ path('admin_logout') }}"><i class="icon-share"></i> Logout</a>
+        </li>
     </ul>
 </div>
