@@ -2,7 +2,7 @@
 namespace En\Entity;
 
 /**
- * @Entity @Table(name="game_domain")
+ * @Entity(repositoryClass="En\Entity\BaseRepository") @Table(name="game_domain")
  */
 class GameDomain
 {

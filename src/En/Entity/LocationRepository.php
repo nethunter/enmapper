@@ -3,7 +3,7 @@ namespace En\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
-class LocationRepository extends EntityRepository
+class LocationRepository extends BaseRepository
 {
     public function findAllAvailableLocations()
     {
@@ -11,13 +11,5 @@ class LocationRepository extends EntityRepository
 
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->getResult();
-    }
-
-    public function getLocationCount()
-    {
-        $dql = 'SELECT COUNT(1) FROM En\Entity\Location';
-
-        $query = $this->getEntityManager()->createQuery();
-        return $query->getSingleScalarResult();
     }
 }
