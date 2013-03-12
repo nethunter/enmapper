@@ -53,7 +53,7 @@ class Game
     protected $content;
 
     /**
-     * @OneToMany(targetEntity="GameLevel", mappedBy="addLevel", cascade={"persist", "remove"})
+     * @OneToMany(targetEntity="GameLevel", mappedBy="game", cascade={"persist", "remove"})
      */
     protected $levels;
 
@@ -314,5 +314,13 @@ class Game
         $this->isIndexed = false;
 
         return $this;
+    }
+
+    public function getFullLink()
+    {
+        $link = $this->getDomain()->getFullLink();
+        $link .= $this->link;
+
+        return $link;
     }
 }

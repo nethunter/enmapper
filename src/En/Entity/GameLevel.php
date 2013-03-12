@@ -224,7 +224,7 @@ class GameLevel {
 
     public function getFullLink()
     {
-        $link = 'http://' . $this->getGame()->getDomain()->getName();
+        $link = 'http://' . $this->getGame()->getDomain()->getFullLink();
         $link .= $this->link;
 
         return $link;

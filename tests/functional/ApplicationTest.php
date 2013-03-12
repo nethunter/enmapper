@@ -35,39 +35,16 @@ class ApplicationTest extends WebTestCase
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
     }
 
-    /* public function testLogin()
+    public function testGameDomainCount()
     {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/login');
+        $em = $this->app['db.orm.em'];
+        $gameDomains = $em->getRepository('En\Entity\GameDomain')->findAll();
 
-        $this->assertTrue($client->getResponse()->isOk());
-
-        $form = $crawler->selectButton('Send')->form(array());
-        $crawler = $client->submit($form, array());
-
-        $this->assertEquals(2, $crawler->filter('.error')->count());
-
-        $form = $crawler->selectButton('Send')->form();
-        $crawler = $client->submit($form, array(
-            'form[email]'     => 'not an email',
-            'form[password]'  => 'wrong password',
-        ));
-        $this->assertEquals(1, $crawler->filter('.error')->count());
-
-        $form = $crawler->selectButton('Send')->form();
-        $crawler = $client->submit($form, array(
-            'form[email]'     => 'email@example.com',
-            'form[password]'  => 'wrong',
-        ));
-        $this->assertEquals(1, $crawler->filter('.error')->count());
-
-        $form = $crawler->selectButton('Send')->form();
-        $crawler = $client->submit($form, array(
-            'form[email]'     => 'email@example.com',
-            'form[password]'  => 'password',
-        ));
-        $this->assertEquals(0, $crawler->filter('.error')->count());
-        $crawler = $client->followRedirect();
-        $this->assertEquals(2, $crawler->filter('a[href="/logout"]')->count());
-    } */
+        foreach($gameDomains as $gameDomain) {
+            /**
+             * @var $gameDomain \En\Entity\GameDomain
+             */
+            echo $gameDomain->getName() . ': ' . count($gameDomain->getGames());
+        }
+    }
 }

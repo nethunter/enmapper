@@ -2,5 +2,24 @@
 {% set admin_active = 'domains' %}
 
 {% block admin_content %}
-    Domains
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Domain Name</th>
+            <th>Games</th>
+        </tr>
+        {% for domain in domains %}
+            <tr>
+                <td>
+                    {{ domain.id }}
+                </td>
+                <td>
+                    {{ domain.name }}
+                </td>
+                <td>
+                    {{ domain.games.count }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}

@@ -2,5 +2,36 @@
 {% set admin_active = 'games' %}
 
 {% block admin_content %}
-    Games
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Domain</th>
+            <th>External ID</th>
+            <th>Name</th>
+            <th>Indexed Levels</th>
+            <th>Game Indexed?</th>
+        </tr>
+        {% for game in games %}
+            <tr>
+                <td>
+                    {{ game.id }}
+                </td>
+                <td>
+                    {{ game.domain.name }}
+                </td>
+                <td>
+                    <a href="{{ game.getFullLink() }}">{{ game.extId }}</a>
+                </td>
+                <td>
+                    {{ game.name }}
+                </td>
+                <td>
+                    {{ game.levels.count }}
+                </td>
+                <td>
+                    {{ game.isIndexed ? 'Yes' : 'No' }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}

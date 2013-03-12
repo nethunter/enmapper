@@ -17,7 +17,7 @@ class GameDomain
     protected $name;
 
     /**
-     * @OneToMany(targetEntity="Game", mappedBy="addGame")
+     * @OneToMany(targetEntity="En\Entity\Game", mappedBy="domain")
      */
     protected $games;
 
@@ -70,5 +70,10 @@ class GameDomain
     public function removeGame(\En\Entity\Game $games)
     {
         $this->games->removeElement($games);
+    }
+
+    public function getFullLink()
+    {
+        return 'http://' . $this->getName();
     }
 }

@@ -73,11 +73,19 @@ $app->get('/admin', function() use ($app) {
 })->bind('admin');
 
 $app->get('/admin/domains', function() use ($app) {
-    return $app['twig']->render('admin/domains.html.twig');
+    $em = $app['db.orm.em'];
+
+    return $app['twig']->render('admin/domains.html.twig', array(
+        'domains' => $em->getRepository('En\Entity\GameDomain')->findAll()
+    ));
 })->bind('admin_domains');
 
 $app->get('/admin/games', function() use ($app) {
-    return $app['twig']->render('admin/games.html.twig');
+    $em = $app['db.orm.em'];
+
+    return $app['twig']->render('admin/games.html.twig', array(
+        'games' => $em->getRepository('En\Entity\Game')->findAll()
+    ));
 })->bind('admin_games');
 
 $app->get('/admin/game_levels', function() use ($app) {
