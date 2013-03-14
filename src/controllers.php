@@ -3,6 +3,7 @@
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Silex\Provider\SecurityServiceProvider;
+use Silex\Application;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\FormError;
@@ -80,17 +81,43 @@ $app->get('/admin/domains', function() use ($app) {
     ));
 })->bind('admin_domains');
 
-$app->get('/admin/games', function() use ($app) {
+$app->get('/admin/games/{domain}', function(Application $app, $domain) {
     $em = $app['db.orm.em'];
+    $gameRepository = $em->getRepository('En\Entity\Game');
+
+    if ($domain) {
+        $games = $gameRepository->findByDomain($domain);
+    } else {
+        $games = $gameRepository->findAll();
+    }
 
     return $app['twig']->render('admin/games.html.twig', array(
-        'games' => $em->getRepository('En\Entity\Game')->findAll()
+        'games' => $games
     ));
-})->bind('admin_games');
+})->value('domain', null)->bind('admin_games');
 
-$app->get('/admin/game_levels', function() use ($app) {
-    return $app['twig']->render('admin/game_levels.html.twig');
-})->bind('admin_gamelevels');
+$app->get('/admin/game_levels/{game}', function(Application $app, $game) {
+    $em = $app['db.orm.em'];
+    $levelRepository = $em->getRepository('En\Entity\GameLevel');
+
+    if ($game) {
+        $levels = $levelRepository->findByGame($game);
+    } else {
+        $levels = $levelRepository->findAll();
+    }
+    return $app['twig']->render('admin/game_levels.html.twig', array(
+        'levels' => $levels
+    ));
+})->value('game', null)->bind('admin_gamelevels');
+
+$app->get('/admin/game_levels/content/{level}', function(Application $app, $level) {
+    $em = $app['db.orm.em'];
+
+    $level = $em->getRepository('En\Entity\GameLevel')->findOneById($level);
+    /** @var \En\Entity\GameLevel $level */
+
+    return $level->getContent();
+})->bind('admin_gamelevels_content');
 
 $app->get('/admin/locations', function() use ($app) {
     return $app['twig']->render('admin/locations.html.twig', array(

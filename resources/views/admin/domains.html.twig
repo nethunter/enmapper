@@ -14,7 +14,7 @@
                     {{ domain.id }}
                 </td>
                 <td>
-                    {{ domain.name }}
+                    <a href={{ path('admin_games', {'domain': domain.id }) }}>{{ domain.name }}</a>
                 </td>
                 <td>
                     {{ domain.games.count }}

@@ -23,7 +23,7 @@
                     <a href="{{ game.getFullLink() }}">{{ game.extId }}</a>
                 </td>
                 <td>
-                    {{ game.name }}
+                    <a href="{{ path('admin_gamelevels', {'game': game.id}) }}">{{ game.name }}</a>
                 </td>
                 <td>
                     {{ game.levels.count }}

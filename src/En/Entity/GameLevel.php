@@ -36,7 +36,7 @@ class GameLevel {
     protected $content;
 
     /**
-     * @OneToMany(targetEntity="Location", mappedBy="addLocation", cascade={"persist", "remove"})
+     * @OneToMany(targetEntity="Location", mappedBy="level", cascade={"persist", "remove"})
      */
     protected $locations;
 
@@ -224,7 +224,7 @@ class GameLevel {
 
     public function getFullLink()
     {
-        $link = 'http://' . $this->getGame()->getDomain()->getFullLink();
+        $link = $this->getGame()->getDomain()->getFullLink();
         $link .= $this->link;
 
         return $link;

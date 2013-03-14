@@ -2,5 +2,59 @@
 {% set admin_active = 'levels' %}
 
 {% block admin_content %}
-    Levels
+    <table class="table table-striped well">
+        <tr>
+            <th>ID</th>
+            <th>Game</th>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Content</th>
+            <th>Locations</th>
+        </tr>
+        {% for level in levels %}
+            <tr>
+                <td>
+                    {{ level.id }}
+                </td>
+                <td>
+                    {{ level.game.name }}
+                </td>
+                <td>
+                    <a href="{{ level.getFullLink() }}">{{ level.num }}</a>
+                </td>
+                <td>
+                    {{ level.name }}
+                </td>
+                <td>
+                    <a href="#" data-remote="{{ path('admin_gamelevels_content', {'level': level.id}) }}" role="button"
+                       data-target="#level_content_modal" data-toggle="modal">Show</a>
+                </td>
+                <td>
+                    {{ level.locations.count }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div id="level_content_modal" class="modal hide fade" tabindex="-1" role="dialog"
+         aria-labelledby="level_content_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="level_content_modal_label">Level Content</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block customjs %}
+    <script type="text/javascript">
+        $('#level_content_modal').on('hidden', function() {
+            $(this).data('modal').$element.removeData();
+        })
+    </script>
 {% endblock %}
