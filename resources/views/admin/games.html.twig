@@ -3,35 +3,39 @@
 
 {% block admin_content %}
     <table class="table table-striped well">
-        <tr>
-            <th>ID</th>
-            <th>Domain</th>
-            <th>External ID</th>
-            <th>Name</th>
-            <th>Indexed Levels</th>
-            <th>Game Indexed?</th>
-        </tr>
-        {% for game in games %}
+        <thead>
             <tr>
-                <td>
-                    {{ game.id }}
-                </td>
-                <td>
-                    {{ game.domain.name }}
-                </td>
-                <td>
-                    <a href="{{ game.getFullLink() }}">{{ game.extId }}</a>
-                </td>
-                <td>
-                    <a href="{{ path('admin_gamelevels', {'game': game.id}) }}">{{ game.name }}</a>
-                </td>
-                <td>
-                    {{ game.levels.count }}
-                </td>
-                <td>
-                    {{ game.isIndexed ? 'Yes' : 'No' }}
-                </td>
+                <th>ID</th>
+                <th>Domain</th>
+                <th>External ID</th>
+                <th>Name</th>
+                <th>Indexed Levels</th>
+                <th>Game Indexed?</th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>
+                        {{ game.id }}
+                    </td>
+                    <td>
+                        {{ game.domain.name }}
+                    </td>
+                    <td>
+                        <a href="{{ game.getFullLink() }}">{{ game.extId }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('admin_gamelevels', {'game': game.id}) }}">{{ game.name }}</a>
+                    </td>
+                    <td>
+                        {{ game.levels.count }}
+                    </td>
+                    <td>
+                        {{ game.isIndexed ? 'Yes' : 'No' }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

@@ -3,23 +3,27 @@
 
 {% block admin_content %}
     <table class="table table-striped well">
-        <tr>
-            <th>ID</th>
-            <th>Domain Name</th>
-            <th>Games</th>
-        </tr>
-        {% for domain in domains %}
+        <thead>
             <tr>
-                <td>
-                    {{ domain.id }}
-                </td>
-                <td>
-                    <a href={{ path('admin_games', {'domain': domain.id }) }}>{{ domain.name }}</a>
-                </td>
-                <td>
-                    {{ domain.games.count }}
-                </td>
+                <th>ID</th>
+                <th>Domain Name</th>
+                <th>Games</th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for domain in domains %}
+                <tr>
+                    <td>
+                        {{ domain.id }}
+                    </td>
+                    <td>
+                        <a href={{ path('admin_games', {'domain': domain.id }) }}>{{ domain.name }}</a>
+                    </td>
+                    <td>
+                        {{ domain.games.count }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

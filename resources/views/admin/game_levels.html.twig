@@ -3,37 +3,41 @@
 
 {% block admin_content %}
     <table class="table table-striped well">
-        <tr>
-            <th>ID</th>
-            <th>Game</th>
-            <th>Number</th>
-            <th>Name</th>
-            <th>Content</th>
-            <th>Locations</th>
-        </tr>
-        {% for level in levels %}
+        <thead>
             <tr>
-                <td>
-                    {{ level.id }}
-                </td>
-                <td>
-                    {{ level.game.name }}
-                </td>
-                <td>
-                    <a href="{{ level.getFullLink() }}">{{ level.num }}</a>
-                </td>
-                <td>
-                    {{ level.name }}
-                </td>
-                <td>
-                    <a href="#" data-remote="{{ path('admin_gamelevels_content', {'level': level.id}) }}" role="button"
-                       data-target="#level_content_modal" data-toggle="modal">Show</a>
-                </td>
-                <td>
-                    <a href="{{ path('admin_locations', {'level': level.id}) }}">{{ level.locations.count }}</a>
-                </td>
+                <th>ID</th>
+                <th>Game</th>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Content</th>
+                <th>Locations</th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for level in levels %}
+                <tr>
+                    <td>
+                        {{ level.id }}
+                    </td>
+                    <td>
+                        {{ level.game.name }}
+                    </td>
+                    <td>
+                        <a href="{{ level.getFullLink() }}">{{ level.num }}</a>
+                    </td>
+                    <td>
+                        {{ level.name }}
+                    </td>
+                    <td>
+                        <a href="#" data-remote="{{ path('admin_gamelevels_content', {'level': level.id}) }}" role="button"
+                           data-target="#level_content_modal" data-toggle="modal">Show</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('admin_locations', {'level': level.id}) }}">{{ level.locations.count }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
     <div id="level_content_modal" class="modal hide fade" tabindex="-1" role="dialog"

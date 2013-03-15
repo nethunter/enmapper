@@ -3,32 +3,36 @@
 
 {% block admin_content %}
     <table class="table table-striped well">
-        <tr>
-            <th>ID</th>
-            <th>Game</th>
-            <th>Level</th>
-            <th>Lat / Lang</th>
-            <th>Visible</th>
-        </tr>
-        {% for location in locations %}
+        <thead>
             <tr>
-                <td>
-                    {{ location.id }}
-                </td>
-                <td>
-                    <a href="{{ location.level.game.getFullLink() }}">{{ location.level.game.name }}</a>
-                </td>
-                <td>
-                    <a href="{{ location.level.getFullLink() }}">{{ location.level }}</a>
-                </td>
-                <td>
-                    {{ location.lat }} {{ location.lng }}
-                </td>
-                <td>
-                    {{ location.visible ? 'Yes' : 'No' }}
-                </td>
+                <th>ID</th>
+                <th>Game</th>
+                <th>Level</th>
+                <th>Lat / Lang</th>
+                <th>Visible</th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for location in locations %}
+                <tr>
+                    <td>
+                        {{ location.id }}
+                    </td>
+                    <td>
+                        <a href="{{ location.level.game.getFullLink() }}">{{ location.level.game.name }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ location.level.getFullLink() }}">{{ location.level }}</a>
+                    </td>
+                    <td>
+                        {{ location.lat }} {{ location.lng }}
+                    </td>
+                    <td>
+                        {{ location.visible ? 'Yes' : 'No' }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
     <div id="level_content_modal" class="modal hide fade" tabindex="-1" role="dialog"
