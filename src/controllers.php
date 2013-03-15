@@ -119,11 +119,20 @@ $app->get('/admin/game_levels/content/{level}', function(Application $app, $leve
     return $level->getContent();
 })->bind('admin_gamelevels_content');
 
-$app->get('/admin/locations', function() use ($app) {
-    return $app['twig']->render('admin/locations.html.twig', array(
+$app->get('/admin/locations/{level}', function(Application $app, $level) {
+    $em = $app['db.orm.em'];
+    $locationRepository = $em->getRepository('En\Entity\Location');
 
+    if ($level) {
+        $locations = $locationRepository->findByLevel($level);
+    } else {
+        $locations = $locationRepository->findAll();
+    }
+
+    return $app['twig']->render('admin/locations.html.twig', array(
+        'locations' => $locations
     ));
-})->bind('admin_locations');
+})->value('level', null)->bind('admin_locations');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {

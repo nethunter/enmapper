@@ -30,7 +30,7 @@
                        data-target="#level_content_modal" data-toggle="modal">Show</a>
                 </td>
                 <td>
-                    {{ level.locations.count }}
+                    <a href="{{ path('admin_locations', {'level': level.id}) }}">{{ level.locations.count }}</a>
                 </td>
             </tr>
         {% endfor %}
