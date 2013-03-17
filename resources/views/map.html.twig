@@ -2,13 +2,13 @@
 {% set active = 'map' %}
 
 {% block head %}
-    {{ map.headerjs|raw }}
+    {{ map.getHeaderJS()|raw }}
 {% endblock %}
 
 {% block content %}
     <div class="map-form-widget">
         {{ form_widget(form) }}
     </div>
-    {{ map.js|raw }}
-    {{ map.body|raw }}
+    {{ map.getMapJS()|raw }}
+    {{ map.getMap()|raw }}
 {% endblock %}

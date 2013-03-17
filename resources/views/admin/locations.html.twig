@@ -1,6 +1,10 @@
 {% extends 'layout_admin.html.twig' %}
 {% set admin_active = 'locations' %}
 
+{% block head %}
+    {{ map.getHeaderJS()|raw }}
+{% endblock %}
+
 {% block admin_content %}
     <table class="table table-striped well">
         <thead>
@@ -25,7 +29,11 @@
                         <a href="{{ location.level.getFullLink() }}">{{ location.level }}</a>
                     </td>
                     <td>
-                        {{ location.lat }} {{ location.lng }}
+                        <a href="#" data-remote="{{ path('admin_location_map',
+                        {'location': location.id}) }}" role="button"
+                           data-target="#location_map_modal" data-toggle="modal">
+                            {{ location.lat }} {{ location.lng }}
+                        </a>
                     </td>
                     <td>
                         {{ location.visible ? 'Yes' : 'No' }}
@@ -35,14 +43,14 @@
         </tbody>
     </table>
 
-    <div id="level_content_modal" class="modal hide fade" tabindex="-1" role="dialog"
+    <div id="location_map_modal" class="modal hide fade" tabindex="-1" role="dialog"
          aria-labelledby="level_content_modal_label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="level_content_modal_label">Level Content</h3>
+            <h3 id="level_content_modal_label">Location Position</h3>
         </div>
         <div class="modal-body">
-            <p>One fine body…</p>
+            <p style="height: 370px; width: 530px;">&nbsp;</p>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -52,8 +60,9 @@
 
 {% block customjs %}
     <script type="text/javascript">
-        $('#level_content_modal').on('hidden', function() {
+        $('#location_map_modal').on('hidden', function() {
             $(this).data('modal').$element.removeData();
-        })
+            $(this).children('.modal-body').html('<p style="height: 370px; width: 530px;">&nbsp;</p>');
+        });
     </script>
 {% endblock %}

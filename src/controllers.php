@@ -53,11 +53,7 @@ $app->match('/map', function() use ($app) {
     $map = $mapGenerator->getMap();
 
     return $app['twig']->render('map.html.twig', array(
-        'map' => array(
-            'headerjs' => $map->getHeaderJS(),
-            'js' => $map->getMapJS(),
-            'body' => $map->getMap()
-        ),
+        'map' => $map,
         'form' => $form->createView()
     ));
 })->bind('map');
@@ -129,10 +125,29 @@ $app->get('/admin/locations/{level}', function(Application $app, $level) {
         $locations = $locationRepository->findAll();
     }
 
+    $mapGenerator = new \En\Games\MapGenerator();
+    $map = $mapGenerator->getMap();
+
     return $app['twig']->render('admin/locations.html.twig', array(
-        'locations' => $locations
+        'locations' => $locations,
+        'map' => $map
     ));
 })->value('level', null)->bind('admin_locations');
+
+$app->get('/admin/locations/map/{location}', function(Application $app, $location) {
+    $em = $app['db.orm.em'];
+    $location = $em->getRepository('En\Entity\Location')->findOneById($location);
+
+    $mapGenerator = new \En\Games\MapGenerator();
+    $mapGenerator->addSingleLocation($location);
+    $mapGenerator->setHeight('370px');
+    $mapGenerator->setWidth('530px');
+    $map = $mapGenerator->generate();
+
+    return $app['twig']->render('admin/locations_map.html.twig', array(
+        'map' => $map
+    ));
+})->bind('admin_location_map');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {

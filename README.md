@@ -8,3 +8,9 @@ http://code.google.com/p/google-maps-utility-library-v3/wiki/Libraries
 
 Custom google maps markers with gd:
 http://www.devinrolsen.com/google-maps-marker-icons-with-numbers-using-php-gd/
+
+Todo
+====
+ * Various coordinates systems
+ * Show map in admin panel
+ * Ability to toggle visibility
