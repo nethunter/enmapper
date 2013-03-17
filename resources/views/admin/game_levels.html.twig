@@ -47,7 +47,7 @@
             <h3 id="level_content_modal_label">Level Content</h3>
         </div>
         <div class="modal-body">
-            <p>One fine body…</p>
+            <p>&nbsp;</p>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -59,6 +59,7 @@
     <script type="text/javascript">
         $('#level_content_modal').on('hidden', function() {
             $(this).data('modal').$element.removeData();
+            $(this).children('.modal-body').html('<p>&nbsp;</p>');
         });
     </script>
 {% endblock %}
