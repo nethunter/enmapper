@@ -36,7 +36,10 @@
                         </a>
                     </td>
                     <td>
-                        {{ location.visible ? 'Yes' : 'No' }}
+                        <a href="#" class='action-toggle-visible' data-location='{{ location.id }}'
+                           data-visible='{{ location.visible }}'>
+                            {{ location.visible ? 'Yes' : 'No' }}
+                        </a>
                     </td>
                 </tr>
             {% endfor %}
@@ -63,6 +66,32 @@
         $('#location_map_modal').on('hidden', function() {
             $(this).data('modal').$element.removeData();
             $(this).children('.modal-body').html('<p style="height: 370px; width: 530px;">&nbsp;</p>');
+        });
+
+        $('.action-toggle-visible').click(function(event) {
+            event.preventDefault();
+
+            var location = $(this).attr('data-location');
+            var visible = $(this).attr('data-visible');
+            console.log(!visible);
+
+            $.ajax({
+                url: '{{ path('admin_locations_visible_toggle') }}',
+                type: 'POST',
+                context: $(this),
+                data: {
+                    location: location,
+                    visible: (!visible ? true : false)
+                }
+            }).done(function(data) {
+                if (data.visible == true) {
+                    $(this).html('Yes')
+                    $(this).attr('data-visible', 1);
+                } else {
+                    $(this).html('No')
+                    $(this).attr('data-visible', '');
+                }
+            });
         });
     </script>
 {% endblock %}

@@ -149,6 +149,27 @@ $app->get('/admin/locations/map/{location}', function(Application $app, $locatio
     ));
 })->bind('admin_location_map');
 
+$app->post('/admin/locations/toggle-visible', function(Request $request) use ($app) {
+    $em = $app['db.orm.em'];
+    /** @var \Doctrine\ORM\EntityManager $em */
+
+    $locationId = $request->get('location');
+    $visible = ($request->get('visible') == 'true');
+
+    $location = $em->getRepository('En\Entity\Location')->findOneById($locationId);
+    /** @var \En\Entity\Location $location */
+
+    $location->setVisible($visible);
+    $em->persist($location);
+    $em->flush();
+
+    return $app->json(array(
+        'success' => true,
+        'location' => $location->getId(),
+        'visible' => $location->getVisible()
+    ));
+})->bind('admin_locations_visible_toggle');
+
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
         return;
